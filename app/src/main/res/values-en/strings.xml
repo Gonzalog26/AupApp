@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">AupApp</string>
     <string name="castellano">Castellano</string>
     <string name="ingles">Ingles</string>
     <string name="frances">Frances</string>
-    <string name="Registro">Registrarse</string>
-    <string name="inicioSesion">Iniciar Sesión</string>
+    <string name="Registro">Sign Up</string>
+    <string name="inicioSesion">Sign In</string>
 </resources>
