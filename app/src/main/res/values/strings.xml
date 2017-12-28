@@ -1,8 +1,36 @@
 <resources>
     <string name="app_name">AupApp</string>
+
+    <!-- Idiomas -->
     <string name="castellano">Castellano</string>
     <string name="ingles">Ingles</string>
     <string name="frances">Frances</string>
     <string name="Registro">Registrarse</string>
     <string name="inicioSesion">Iniciar Sesión</string>
+
+    <!-- Strings para el registro -->
+    <string name="nombre">Nombre</string>
+    <string name="introducir_nombre">Introduzca su nombre</string>
+    <string name="primer_apellido">Primer apellido</string>
+    <string name="introducir_primer_apellido">Introduzca su primer apellido</string>
+    <string name="segundo_apellido">Segundo apellido</string>
+    <string name="introducir_segundo_apellido">Introduzca su segundo apellido</string>
+    <string name="password">Contraseña</string>
+    <string name="introducir_password">Introduzca su contraseña</string>
+    <string name="sign_up">Registrarse</string>
+    <string name="sacar_foto">Sacar foto</string>
+
+    <!-- Strings para el logeo -->
+    <string name="login">Login</string>
+    <string name="introducir_login">Introduzca su login</string>
+    <string name="sign_in">Logearse</string>
+
+
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
 </resources>

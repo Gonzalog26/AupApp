@@ -12,13 +12,15 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/colorPrimaryDark"
         android:textColor="@color/white"
-        android:text="@string/Registro"/>
+        android:text="@string/Registro"
+        android:onClick="registrarse"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/colorPrimaryDark"
         android:textColor="@color/white"
-        android:text="@string/inicioSesion"/>
+        android:text="@string/inicioSesion"
+        android:onClick="iniciarSesion"/>
 
 </LinearLayout>

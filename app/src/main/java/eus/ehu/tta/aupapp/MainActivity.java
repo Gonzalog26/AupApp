@@ -18,6 +18,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void castellano(View view){
+        Locale localizacion = new Locale("es","Es");
+        Locale.setDefault(localizacion);
+        Configuration conf = new Configuration();
+        conf.locale = localizacion;
+        getBaseContext().getResources().updateConfiguration(conf,getBaseContext().getResources().getDisplayMetrics());
         Intent intent = new Intent(this, Main2Activity.class);
         startActivity(intent);
     }
@@ -33,6 +38,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void frances(View view){
+        Locale localizacion = new Locale("fr","Fr");
+        Locale.setDefault(localizacion);
+        Configuration conf = new Configuration();
+        conf.locale = localizacion;
+        getBaseContext().getResources().updateConfiguration(conf,getBaseContext().getResources().getDisplayMetrics());
         Intent intent = new Intent(this, Main2Activity.class);
         startActivity(intent);
     }

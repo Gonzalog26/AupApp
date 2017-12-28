@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    tools:context="eus.ehu.tta.aupapp.RegisterActivity">
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:columnCount="2">
+
+        <TextView
+            android:text="@string/nombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:typeface="sans"/>
+
+        <EditText
+            android:id="@+id/nombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/introducir_nombre"
+            android:typeface="sans"
+            />
+
+        <TextView
+            android:text="@string/primer_apellido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:typeface="sans"/>
+
+        <EditText
+            android:id="@+id/papellido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/introducir_primer_apellido"
+            android:typeface="sans"/>
+
+        <TextView
+            android:text="@string/primer_apellido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:typeface="sans"/>
+
+        <EditText
+            android:id="@+id/sapellido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/introducir_segundo_apellido"
+            android:typeface="sans"/>
+
+        <TextView
+            android:text="@string/password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:typeface="sans"/>
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/introducir_password"
+            android:inputType="textPassword"
+            android:typeface="sans"/>
+
+    </GridLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/accountcircle"
+        android:drawablePadding="8dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_gravity="center"
+        android:typeface="sans"
+        android:text="@string/sacar_foto" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/account"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_gravity="center"
+        android:typeface="sans"
+        android:text="@string/Registro"
+        android:onClick="registro"/>
+
+</LinearLayout>
