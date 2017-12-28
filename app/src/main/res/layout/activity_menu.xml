@@ -1,9 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginLeft="@dimen/boton_horizontal_margin"
+    android:layout_marginRight="@dimen/boton_horizontal_margin"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
     tools:context="eus.ehu.tta.aupapp.MenuActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:src="@drawable/icon"/>
+
+    <Button
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:drawableTint="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/accountcircle"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_gravity="center"
+        android:typeface="sans"
+        android:text="@string/perfil_usuario"
+        android:onClick="perfilUsuario"/>
+
+    <Button
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:drawableTint="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/calendar"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_gravity="center"
+        android:typeface="sans"
+        android:text="@string/crear_ver_eventos"
+        android:onClick="crearVerEventos"/>
+
+    <Button
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:drawableTint="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/commentquestionoutline"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_gravity="center"
+        android:typeface="sans"
+        android:text="@string/dia_a_dia"
+        android:onClick="diaDia"/>
+
+    <Button
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:drawableTint="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/imagefilterhdr"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_gravity="center"
+        android:typeface="sans"
+        android:text="@string/crear_ver_eventos"
+        android:onClick="crearVerEventos"/>
+
+</LinearLayout>

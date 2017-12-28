@@ -5,9 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
     tools:context="eus.ehu.tta.aupapp.Main2Activity">
 
+    <ImageView
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:src="@drawable/icono"/>
+
     <Button
+        android:layout_marginRight="@dimen/boton_horizontal_margin"
+        android:layout_marginLeft="@dimen/boton_horizontal_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/colorPrimaryDark"
@@ -16,6 +26,8 @@
         android:onClick="registrarse"/>
 
     <Button
+        android:layout_marginLeft="@dimen/boton_horizontal_margin"
+        android:layout_marginRight="@dimen/boton_horizontal_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/colorPrimaryDark"

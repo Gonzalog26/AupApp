@@ -75,6 +75,9 @@
     </GridLayout>
 
     <Button
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:drawableTint="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/accountcircle"
@@ -85,8 +88,13 @@
         android:text="@string/sacar_foto" />
 
     <Button
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:drawableTint="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/boton_horizontal_margin"
+        android:layout_marginRight="@dimen/boton_horizontal_margin"
         android:drawableLeft="@drawable/account"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_gravity="center"

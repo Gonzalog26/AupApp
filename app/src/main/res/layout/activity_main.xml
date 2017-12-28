@@ -24,6 +24,8 @@
         android:src="@drawable/icon"/>
 
     <Button
+        android:layout_marginLeft="@dimen/boton_horizontal_margin"
+        android:layout_marginRight="@dimen/boton_horizontal_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/colorPrimary"
@@ -33,6 +35,8 @@
         android:onClick="castellano"/>
 
     <Button
+        android:layout_marginLeft="@dimen/boton_horizontal_margin"
+        android:layout_marginRight="@dimen/boton_horizontal_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/colorPrimary"
@@ -41,6 +45,8 @@
         android:onClick="ingles"/>
 
     <Button
+        android:layout_marginLeft="@dimen/boton_horizontal_margin"
+        android:layout_marginRight="@dimen/boton_horizontal_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/colorPrimary"
