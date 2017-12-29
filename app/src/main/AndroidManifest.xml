@@ -28,7 +28,10 @@
         <activity android:name=".PerfilUsuarioActivity" />
         <activity android:name=".EventosMenuActivity" />
         <activity android:name=".DiaDiaActivity" />
-        <activity android:name=".ConoceBizkaiaActivity"></activity>
+        <activity android:name=".ConoceBizkaiaActivity" />
+        <activity android:name=".crearEventoActivity" />
+        <activity android:name=".CrearEventoActivity" />
+        <activity android:name=".VerEventosActivity"></activity>
     </application>
 
 </manifest>

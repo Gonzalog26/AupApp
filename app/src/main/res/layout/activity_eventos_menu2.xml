@@ -1,9 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="eus.ehu.tta.aupapp.EventosMenuActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:src="@drawable/event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/boton_horizontal_margin"
+        android:layout_marginRight="@dimen/boton_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"/>
+
+    <Button
+        android:layout_marginRight="@dimen/boton_horizontal_margin"
+        android:layout_marginLeft="@dimen/boton_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:text="@string/crearEvento"
+        android:onClick="crearEvento"/>
+
+    <Button
+        android:layout_marginLeft="@dimen/boton_horizontal_margin"
+        android:layout_marginRight="@dimen/boton_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:text="@string/verEventos"
+        android:onClick="verEventos"/>
+
+</LinearLayout>

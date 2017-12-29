@@ -38,6 +38,10 @@
     <string name="nombre_apellidos">Nombre y apellidos: </string>
     <string name="login2">Login: </string>
 
+    <!--Relacionado con eventos-->
+
+    <string name="crearEvento">Crear evento</string>
+    <string name="verEventos">Ver eventos</string>
 
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>

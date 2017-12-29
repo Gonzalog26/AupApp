@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="eus.ehu.tta.aupapp.modelo.EventosMenuActivity">
+    tools:context="eus.ehu.tta.aupapp.CrearEventoActivity">
 
 </android.support.constraint.ConstraintLayout>
