@@ -11,7 +11,7 @@
     tools:context="eus.ehu.tta.aupapp.MenuActivity">
 
     <ImageView
-        android:layout_width="200dp"
+        android:layout_width="320dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
         android:src="@drawable/icon"/>
@@ -65,7 +65,7 @@
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_gravity="center"
         android:typeface="sans"
-        android:text="@string/crear_ver_eventos"
-        android:onClick="crearVerEventos"/>
+        android:text="@string/conoce_bizkaia"
+        android:onClick="conoceBizkaia"/>
 
 </LinearLayout>

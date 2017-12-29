@@ -1,12 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">AupApp</string>
 
     <!-- Idiomas -->
     <string name="castellano">Castellano</string>
     <string name="ingles">Ingles</string>
     <string name="frances">Frances</string>
-    <string name="Registro">Registrarse</string>
-    <string name="inicioSesion">Iniciar Sesión</string>
+    <string name="Registro">Inscription</string>
+    <string name="inicioSesion">Login</string>
 
     <!-- Strings para el registro -->
     <string name="nombre">Nombre</string>
@@ -33,17 +35,5 @@
     <string name="dia_a_dia">Dia a dia</string>
     <string name="conoce_bizkaia">Conoce Bizkaia</string>
 
-    <!-- perfil de usuario-->
 
-    <string name="nombre_apellidos">Nombre y apellidos: </string>
-    <string name="login2">Login: </string>
-
-
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
 </resources>

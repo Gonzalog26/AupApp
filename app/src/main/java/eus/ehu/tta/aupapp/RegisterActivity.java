@@ -27,7 +27,13 @@ public class RegisterActivity extends AppCompatActivity {
         String login = User.registro(nombre,papellido,sapellido,password);
 
         Intent intent = new Intent(this, MenuActivity.class);
-        intent.putExtra(MenuActivity.EXTRA_LOGIN,login);
+        Bundle extras = new Bundle();
+        extras.putString("EXTRA_NOMBRE",login);
+        extras.putString("EXTRA_NOMBRE",nombre);
+        extras.putString("EXTRA_PAPELLIDO",papellido);
+        extras.putString("EXTRA_PAPELLIDO",sapellido);
+        intent.putExtras(extras);
         startActivity(intent);
+
     }
 }

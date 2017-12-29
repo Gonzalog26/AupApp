@@ -1,9 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">AupApp</string>
+
+    <!-- Idiomas -->
     <string name="castellano">Castellano</string>
     <string name="ingles">Ingles</string>
     <string name="frances">Frances</string>
-    <string name="Registro">Sign Up</string>
-    <string name="inicioSesion">Sign In</string>
+    <string name="Registro">Sign up</string>
+    <string name="inicioSesion">Sign in</string>
+
+    <!-- Strings para el registro -->
+    <string name="nombre">Nombre</string>
+    <string name="introducir_nombre">Introduzca su nombre</string>
+    <string name="primer_apellido">Primer apellido</string>
+    <string name="introducir_primer_apellido">Introduzca su primer apellido</string>
+    <string name="segundo_apellido">Segundo apellido</string>
+    <string name="introducir_segundo_apellido">Introduzca su segundo apellido</string>
+    <string name="password">Contraseña</string>
+    <string name="introducir_password">Introduzca su contraseña</string>
+    <string name="sign_up">Registrarse</string>
+    <string name="sacar_foto">Sacar foto</string>
+
+    <!-- Strings para el logeo -->
+    <string name="login">Login</string>
+    <string name="introducir_login">Introduzca su login</string>
+    <string name="sign_in">Logearse</string>
+
+
+    <!-- menu -->
+
+    <string name="perfil_usuario">Perfil de usuario</string>
+    <string name="crear_ver_eventos">Crear o ver eventos</string>
+    <string name="dia_a_dia">Dia a dia</string>
+    <string name="conoce_bizkaia">Conoce Bizkaia</string>
 </resources>
