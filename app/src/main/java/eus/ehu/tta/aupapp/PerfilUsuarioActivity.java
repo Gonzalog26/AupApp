@@ -34,7 +34,7 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
         textLogin.setText(EXTRA_LOGIN);
 
         TextView textNombreApellidos = (TextView) findViewById(R.id.frase_nombre_apellidos);
-        textNombreApellidos.setText(EXTRA_PAPELLIDO+" "+EXTRA_PAPELLIDO+" "+EXTRA_SAPELLIDO);
+        textNombreApellidos.setText(EXTRA_NOMBRE+" "+EXTRA_PAPELLIDO+" "+EXTRA_SAPELLIDO);
 
 
     }

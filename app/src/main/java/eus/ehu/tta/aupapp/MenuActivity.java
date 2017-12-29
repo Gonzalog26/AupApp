@@ -28,10 +28,10 @@ public class MenuActivity extends AppCompatActivity {
     public void perfilUsuario(View view){
         Intent intent = new Intent(this, PerfilUsuarioActivity.class);
         Bundle extras = new Bundle();
-        extras.putString("EXTRA_NOMBRE",EXTRA_LOGIN);
+        extras.putString("EXTRA_LOGIN",EXTRA_LOGIN);
         extras.putString("EXTRA_NOMBRE",EXTRA_NOMBRE);
         extras.putString("EXTRA_PAPELLIDO",EXTRA_PAPELLIDO);
-        extras.putString("EXTRA_PAPELLIDO",EXTRA_SAPELLIDO);
+        extras.putString("EXTRA_SAPELLIDO",EXTRA_SAPELLIDO);
         intent.putExtras(extras);
         startActivity(intent);
     }

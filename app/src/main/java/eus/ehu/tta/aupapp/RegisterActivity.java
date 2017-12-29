@@ -28,10 +28,10 @@ public class RegisterActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, MenuActivity.class);
         Bundle extras = new Bundle();
-        extras.putString("EXTRA_NOMBRE",login);
+        extras.putString("EXTRA_LOGIN",login);
         extras.putString("EXTRA_NOMBRE",nombre);
         extras.putString("EXTRA_PAPELLIDO",papellido);
-        extras.putString("EXTRA_PAPELLIDO",sapellido);
+        extras.putString("EXTRA_SAPELLIDO",sapellido);
         intent.putExtras(extras);
         startActivity(intent);
 
