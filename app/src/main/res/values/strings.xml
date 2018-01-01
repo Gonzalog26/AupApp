@@ -61,6 +61,16 @@
     <string name="introducir_fecha_inicial">Introduzca la fecha inicial de los eventos a ver</string>
     <string name="introducir_fecha_final">Introduzca la fecha final de los eventos a ver</string>
 
+    <!-- Strings para conoce bizkaia -->
+    <string name="lugares_bizkaia">Lugares</string>
+    <string name="cultura_bizkaia">Cultura</string>
+    <string name="museos">Museos</string>
+    <string name="fiesta_bares">Fiesta y bares</string>
+    <string name="playas_montañas">Playas y montañas</string>
+    <string name="centros_comerciales">Centros comerciales</string>
+    <string name="bailes">Bailes</string>
+    <string name="comida">Comida</string>
+
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
