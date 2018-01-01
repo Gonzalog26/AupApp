@@ -18,7 +18,7 @@
     <string name="password">Contraseña</string>
     <string name="introducir_password">Introduzca su contraseña</string>
     <string name="sign_up">Registrarse</string>
-    <string name="sacar_foto">Sacar foto</string>
+    <string name="sacar_foto_opcional">Sacar foto (Opcional)</string>
 
     <!-- Strings para el logeo -->
     <string name="login">Login</string>
@@ -42,6 +42,24 @@
 
     <string name="crearEvento">Crear evento</string>
     <string name="verEventos">Ver eventos</string>
+
+    <!-- Strings para crear evento -->
+    <string name="introducir_nombre_evento">Introduzca el nombre del evento</string>
+    <string name="fecha_evento">Fecha: </string>
+    <string name="introducir_fecha_evento">Introduzca el dia del evento</string>
+    <string name="hora_evento">Hora: </string>
+    <string name="introducir_hora_evento">Introduzca la hora del evento</string>
+    <string name="descripcion_evento">Descripcion: </string>
+    <string name="introducir_descripcion_evento">Introduzca una breve descripcion del evento</string>
+    <string name="ubicacion_evento">Ubicacion: </string>
+    <string name="introducir_ubicacion_evento">Introduzca la ubicacion del evento</string>
+    <string name="sacar_foto">Sacar foto</string>
+
+    <!-- Strings para ver evento -->
+    <string name="fecha_inicial">Fecha inicial: </string>
+    <string name="fecha_final">Fecha final: </string>
+    <string name="introducir_fecha_inicial">Introduzca la fecha inicial de los eventos a ver</string>
+    <string name="introducir_fecha_final">Introduzca la fecha final de los eventos a ver</string>
 
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
