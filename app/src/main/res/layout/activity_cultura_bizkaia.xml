@@ -7,40 +7,56 @@
     android:orientation="vertical"
     tools:context="eus.ehu.tta.aupapp.CulturaBizkaiaActivity">
 
-    <ImageView
-        android:src="@drawable/baile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/activity_vertical_margin"/>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:layout_marginRight="@dimen/boton_horizontal_margin"
-        android:layout_marginLeft="@dimen/boton_horizontal_margin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:textColor="@color/white"
-        android:text="@string/bailes"
-        android:onClick="enlaceBailes"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
 
-    <ImageView
-        android:src="@drawable/comida"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"/>
+            <ImageView
+                android:src="@drawable/baile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/activity_vertical_margin"/>
 
-    <Button
-        android:layout_marginRight="@dimen/boton_horizontal_margin"
-        android:layout_marginLeft="@dimen/boton_horizontal_margin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:textColor="@color/white"
-        android:text="@string/comida"
-        android:onClick="enlaceComida"/>
+            <Button
+                android:layout_marginRight="@dimen/boton_horizontal_margin"
+                android:layout_marginLeft="@dimen/boton_horizontal_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/white"
+                android:text="@string/bailes"
+                android:onClick="enlaceBailes"/>
+
+            <ImageView
+                android:src="@drawable/comida"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"/>
+
+            <Button
+                android:layout_marginRight="@dimen/boton_horizontal_margin"
+                android:layout_marginLeft="@dimen/boton_horizontal_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/white"
+                android:text="@string/comida"
+                android:onClick="enlaceComida"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </LinearLayout>
