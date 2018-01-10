@@ -7,76 +7,88 @@
     android:orientation="vertical"
     tools:context="eus.ehu.tta.aupapp.LugaresBizkaiaActivity">
 
-    <ImageView
-        android:src="@drawable/museos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/activity_vertical_margin"/>
 
-    <Button
-        android:layout_marginRight="@dimen/boton_horizontal_margin"
-        android:layout_marginLeft="@dimen/boton_horizontal_margin"
+    <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:textColor="@color/white"
-        android:text="@string/museos"
-        android:onClick="enlaceMuseos"/>
-
-    <ImageView
-        android:src="@drawable/fiesta"
+        android:orientation="vertical"
         android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"/>
-
-    <Button
-        android:layout_marginRight="@dimen/boton_horizontal_margin"
         android:layout_marginLeft="@dimen/boton_horizontal_margin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:textColor="@color/white"
-        android:text="@string/fiesta_bares"
-        android:onClick="enlaceFiesta"/>
+        android:layout_marginRight="@dimen/boton_horizontal_margin">
 
-    <ImageView
-        android:src="@drawable/playas"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"/>
 
-    <Button
-        android:layout_marginRight="@dimen/boton_horizontal_margin"
-        android:layout_marginLeft="@dimen/boton_horizontal_margin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:textColor="@color/white"
-        android:text="@string/playas_montañas"
-        android:onClick="enlaceFiesta"/>
+        <ImageView
+            android:src="@drawable/museos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/activity_vertical_margin"/>
 
-    <ImageView
-        android:src="@drawable/cc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/activity_vertical_margin"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:textColor="@color/white"
+            android:text="@string/museos"
+            android:onClick="enlaceMuseos"/>
 
-    <Button
-        android:layout_marginRight="@dimen/boton_horizontal_margin"
-        android:layout_marginLeft="@dimen/boton_horizontal_margin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:textColor="@color/white"
-        android:text="@string/centros_comerciales"
-        android:onClick="enlaceCentrosComerciales"/>
+        <ImageView
+            android:src="@drawable/fiesta"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"/>
+
+        <Button
+            android:layout_marginRight="@dimen/boton_horizontal_margin"
+            android:layout_marginLeft="@dimen/boton_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:textColor="@color/white"
+            android:text="@string/fiesta_bares"
+            android:onClick="enlaceFiesta"/>
+
+        <ImageView
+            android:src="@drawable/playas"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"/>
+
+        <Button
+            android:layout_marginRight="@dimen/boton_horizontal_margin"
+            android:layout_marginLeft="@dimen/boton_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:textColor="@color/white"
+            android:text="@string/playas_montañas"
+            android:onClick="enlaceFiesta"/>
+
+        <ImageView
+            android:src="@drawable/cc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/activity_vertical_margin"/>
+
+        <Button
+            android:layout_marginRight="@dimen/boton_horizontal_margin"
+            android:layout_marginLeft="@dimen/boton_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:textColor="@color/white"
+            android:text="@string/centros_comerciales"
+            android:onClick="enlaceCentrosComerciales"/>
+
+
+    </GridLayout>
+
 
 </LinearLayout>

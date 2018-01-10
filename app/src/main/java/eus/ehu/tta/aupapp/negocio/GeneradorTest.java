@@ -41,7 +41,7 @@ public class GeneradorTest implements InterfazTest {
         test.setEnunciado("Pregunta 3: Itzartu berri naiz ____");
         test.getRespuestas().add("Zelan zaude");
         test.getRespuestas().add("Egun on");
-        test.getRespuestas().add("Zenbat balio du...?");
+        test.getRespuestas().add("Zenbat balio du?");
         test.setRespuestCorrecta(1);
         test.setUrlVideo("https://dl.dropboxusercontent.com/s/4e3pftb45zbi9tn/3.mp4?dl=0");
         tests.add(test);
@@ -50,9 +50,27 @@ public class GeneradorTest implements InterfazTest {
         test.setEnunciado("Pregunta 4: Banoa, _____!");
         test.getRespuestas().add("Agur");
         test.getRespuestas().add("Kaixo");
-        test.getRespuestas().add("Nola heldu naiteke...?");
+        test.getRespuestas().add("Nola heldu naiteke?");
         test.setRespuestCorrecta(0);
         test.setUrlVideo("https://dl.dropboxusercontent.com/s/yk6co6tklge7isi/4.mp4?dl=0");
+        tests.add(test);
+
+        test = new Test();
+        test.setEnunciado("Pregunta 5: Kaixo, ____? Ni ondo.");
+        test.getRespuestas().add("Zelan zaude");
+        test.getRespuestas().add("Zenbat balio du?");
+        test.getRespuestas().add("Nola heldu naiteke?");
+        test.setRespuestCorrecta(0);
+        test.setUrlVideo("https://dl.dropboxusercontent.com/s/r8toin22z1mk2gp/5.mp4?dl=0");
+        tests.add(test);
+
+        test = new Test();
+        test.setEnunciado("Pregunta 6: Pintxo honek, _____!");
+        test.getRespuestas().add("Zenbat balio du?");
+        test.getRespuestas().add("Nola hel naiteke?");
+        test.getRespuestas().add("Zer moduz?");
+        test.setRespuestCorrecta(0);
+        test.setUrlVideo("https://dl.dropboxusercontent.com/s/2qev9l7jibxjg9a/6.mp4?dl=0");
         tests.add(test);
 
         return tests;

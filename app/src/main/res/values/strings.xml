@@ -74,6 +74,8 @@
     <!-- Strings para los tests -->
     <string name="preguntarDireccion">Preguntar una direccion</string>
     <string name="saludosdespedidas">Saludos y despedidas</string>
+    <string name="iniciarConversacion">Iniciar Conversación</string>
+    <string name="Precios">Precios</string>
 
     <string name="verVideo">Ver video</string>
     <string name="corregir">Corregir</string>

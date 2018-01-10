@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.MediaController;
 import android.widget.RadioButton;
@@ -22,8 +23,10 @@ import java.util.List;
 import eus.ehu.tta.aupapp.modelo.Test;
 import eus.ehu.tta.aupapp.negocio.GeneradorTest;
 
-public class SaludoosDespedidas1Activity extends AppCompatActivity implements View.OnClickListener{
+public class TestActivity extends AppCompatActivity implements View.OnClickListener{
 
+
+    public static String  NUMERO_PAG;
 
     int respuestasCorrecta;
     String urlVideo;
@@ -34,7 +37,14 @@ public class SaludoosDespedidas1Activity extends AppCompatActivity implements Vi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tests);
 
-        numeroPag=1;
+        Intent intent = getIntent();
+        numeroPag = intent.getIntExtra(NUMERO_PAG, 0);
+
+
+        if(numeroPag==0 || numeroPag == 4 || numeroPag == 5){
+            Button bt = findViewById(R.id.boton_next);
+            bt.setText("Volver al menu de tests");
+        }
 
         GeneradorTest generadorTest = new GeneradorTest();
         List<Test> tests = generadorTest.getTests();
@@ -55,7 +65,6 @@ public class SaludoosDespedidas1Activity extends AppCompatActivity implements Vi
             radio.setOnClickListener(this);
             group.addView(radio);
             i++;
-
         }
     }
 
@@ -63,33 +72,49 @@ public class SaludoosDespedidas1Activity extends AppCompatActivity implements Vi
 
         numeroPag++;
 
-        findViewById(R.id.video_ayuda).setVisibility(View.VISIBLE);
-        findViewById(R.id.video).setVisibility(View.GONE);
-        findViewById(R.id.boton_next).setVisibility(View.GONE);
+        if(numeroPag==4 || numeroPag==1 || numeroPag == 5 || numeroPag == 6){
 
-        RadioGroup group = (RadioGroup) findViewById(R.id.elecciones_test);
-        group.removeAllViews();
+            Intent intent = new Intent(this,DiaDiaActivity.class);
+            startActivity(intent);
 
-        GeneradorTest generadorTest = new GeneradorTest();
-        List<Test> tests = generadorTest.getTests();
+        }else{
 
-        TextView enunciado = (TextView)findViewById(R.id.enunciado_test);
-        enunciado.setText(tests.get(numeroPag).getEnunciado());
+            if(numeroPag==3){
+               Button bt = findViewById(R.id.boton_next);
+               bt.setText("Volver al menu de tests");
+            }
 
-        respuestasCorrecta = tests.get(numeroPag).getRespuestCorrecta();
-        urlVideo = tests.get(numeroPag).getUrlVideo();
+            findViewById(R.id.video_ayuda).setVisibility(View.VISIBLE);
+            findViewById(R.id.video).setVisibility(View.GONE);
+            findViewById(R.id.boton_next).setVisibility(View.GONE);
 
-        int i=0;
+            RadioGroup group = (RadioGroup) findViewById(R.id.elecciones_test);
+            group.removeAllViews();
 
-        for( String resp : tests.get(numeroPag).getRespuestas()) {
-            RadioButton radio = new RadioButton(this);
-            radio.setId(i);
-            radio.setText(resp);
-            radio.setOnClickListener(this);
-            group.addView(radio);
-            i++;
+            GeneradorTest generadorTest = new GeneradorTest();
+            List<Test> tests = generadorTest.getTests();
+
+            TextView enunciado = (TextView)findViewById(R.id.enunciado_test);
+            enunciado.setText(tests.get(numeroPag).getEnunciado());
+
+            respuestasCorrecta = tests.get(numeroPag).getRespuestCorrecta();
+            urlVideo = tests.get(numeroPag).getUrlVideo();
+
+            int i=0;
+
+            for( String resp : tests.get(numeroPag).getRespuestas()) {
+                RadioButton radio = new RadioButton(this);
+                radio.setId(i);
+                radio.setText(resp);
+                radio.setOnClickListener(this);
+                group.addView(radio);
+                i++;
+
+            }
 
         }
+
+
     }
 
     public void verVideo(View view){
