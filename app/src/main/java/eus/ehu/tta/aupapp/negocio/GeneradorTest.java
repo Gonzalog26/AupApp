@@ -25,7 +25,7 @@ public class GeneradorTest implements InterfazTest {
         test.getRespuestas().add("Nola heldu naiteke");
         test.getRespuestas().add("Zenbat balio du");
         test.setRespuestCorrecta(1);
-        test.setUrlVideo("www.google.com");
+        test.setUrlVideo("https://dl.dropboxusercontent.com/s/90up4kpbyia2hwz/1.mp4?dl=0");
         tests.add(test);
 
         test = new Test();
@@ -34,7 +34,7 @@ public class GeneradorTest implements InterfazTest {
         test.getRespuestas().add("Kaixo");
         test.getRespuestas().add("Zelan zaude");
         test.setRespuestCorrecta(0);
-        test.setUrlVideo("www.google.com");
+        test.setUrlVideo("https://dl.dropboxusercontent.com/s/o3dqfr9lzjwr8s3/2.mp4?dl=0");
         tests.add(test);
 
         test = new Test();
@@ -43,7 +43,7 @@ public class GeneradorTest implements InterfazTest {
         test.getRespuestas().add("Egun on");
         test.getRespuestas().add("Zenbat balio du...?");
         test.setRespuestCorrecta(1);
-        test.setUrlVideo("www.google.com");
+        test.setUrlVideo("https://dl.dropboxusercontent.com/s/4e3pftb45zbi9tn/3.mp4?dl=0");
         tests.add(test);
 
         test = new Test();
@@ -52,7 +52,7 @@ public class GeneradorTest implements InterfazTest {
         test.getRespuestas().add("Kaixo");
         test.getRespuestas().add("Nola heldu naiteke...?");
         test.setRespuestCorrecta(0);
-        test.setUrlVideo("www.google.com");
+        test.setUrlVideo("https://dl.dropboxusercontent.com/s/yk6co6tklge7isi/4.mp4?dl=0");
         tests.add(test);
 
         return tests;

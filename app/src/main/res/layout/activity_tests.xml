@@ -7,6 +7,25 @@
     android:orientation="vertical"
     tools:context="eus.ehu.tta.aupapp.PreguntarDireccionActivity">
 
+    <Button
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:id="@+id/video_ayuda"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:text="@string/verVideo"
+        android:onClick="verVideo">
+    </Button>
+
+    <VideoView
+        android:id="@+id/video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
     <TextView
         android:id="@+id/enunciado_test"
         android:layout_marginTop="@dimen/activity_vertical_margin"

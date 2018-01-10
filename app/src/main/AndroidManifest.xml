@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <uses-feature
         android:name="android.hardware.Camera"
@@ -43,7 +44,6 @@
         <activity android:name=".negocio.PreguntarDireccionActivity" />
         <activity android:name=".PreguntarDireccionActivity" />
         <activity android:name=".SaludoosDespedidas1Activity" />
-        <activity android:name=".SaludosDespedidas2Activity"></activity>
     </application>
 
 </manifest>
