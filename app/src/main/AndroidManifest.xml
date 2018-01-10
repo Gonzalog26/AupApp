@@ -4,8 +4,15 @@
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <uses-feature
+        android:name="android.hardware.Camera"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -29,11 +36,14 @@
         <activity android:name=".EventosMenuActivity" />
         <activity android:name=".DiaDiaActivity" />
         <activity android:name=".ConoceBizkaiaActivity" />
-        <activity android:name=".crearEventoActivity" />
         <activity android:name=".CrearEventoActivity" />
         <activity android:name=".VerEventosActivity" />
         <activity android:name=".LugaresBizkaiaActivity" />
-        <activity android:name=".CulturaBizkaiaActivity"></activity>
+        <activity android:name=".CulturaBizkaiaActivity" />
+        <activity android:name=".negocio.PreguntarDireccionActivity" />
+        <activity android:name=".PreguntarDireccionActivity" />
+        <activity android:name=".SaludoosDespedidas1Activity" />
+        <activity android:name=".SaludosDespedidas2Activity"></activity>
     </application>
 
 </manifest>

@@ -36,4 +36,8 @@ public class RegisterActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void sacarFoto(View view){
+
+    }
 }

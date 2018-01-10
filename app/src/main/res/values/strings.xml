@@ -71,6 +71,44 @@
     <string name="bailes">Bailes</string>
     <string name="comida">Comida</string>
 
+    <!-- Strings para los tests -->
+    <string name="preguntarDireccion">Preguntar una direccion</string>
+    <string name="saludosdespedidas">Saludos y despedidas</string>
+
+    <string name="corregir">Corregir</string>
+    <string name="siguiente">Siguiente</string>
+
+    <string name="enunciado1">Pregunta 1: Barkatu, ____ liburutegira?</string>
+    <string name="respuesta11">Kaixo</string>
+    <string name="respuesta12">Nola heldu naiteke</string>
+    <string name="respuesta13">Zenbat balio du...?</string>
+
+    <string name="enunciado2">Pregunta 2: Lotara noa, ____</string>
+    <string name="respuesta21">Gabon</string>
+    <string name="respuesta22">Kaixo</string>
+    <string name="respuesta23">Zelan zaude?</string>
+
+    <string name="enunciado3">Pregunta 3: Itzartu berri naiz ____</string>
+    <string name="respuesta31">Zelan zaude</string>
+    <string name="respuesta32">Egun on</string>
+    <string name="respuesta33">Zenbat balio du...?</string>
+
+    <string name="enunciado4">Pregunta 4: Banoa, ___!</string>
+    <string name="respuesta41">Agur</string>
+    <string name="respuesta42">Kaixo</string>
+    <string name="respuesta43">Nola heldu naiteke...?</string>
+
+    <string name="enunciado5">Pregunta 5: Kaixo, ____? Ni ondo.</string>
+    <string name="respuesta51">Zenbat balio du...?</string>
+    <string name="respuesta52">Zelan zaude?</string>
+    <string name="respuesta53">Nola heldu naiteke?</string>
+
+    <string name="enunciado6">Pregunta 6: Pintxo honek,____?</string>
+    <string name="respuesta61">Zenbat balio du...?</string>
+    <string name="respuesta62">Nola hel naiteke...?</string>
+    <string name="respuesta63">Zer moduz?</string>
+
+
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
