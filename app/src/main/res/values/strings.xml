@@ -19,6 +19,8 @@
     <string name="introducir_password">Introduzca su contraseña</string>
     <string name="sign_up">Registrarse</string>
     <string name="sacar_foto_opcional">Sacar foto (Opcional)</string>
+    <string name="nocamara">El dispositivo movil no dispone de camara</string>
+    <string name="noapp">EL dispositivo no dispone de ninguna aplicación para sacar foto</string>
 
     <!-- Strings para el logeo -->
     <string name="login">Login</string>

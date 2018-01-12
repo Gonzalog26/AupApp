@@ -85,7 +85,15 @@
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_gravity="center"
         android:typeface="sans"
-        android:text="@string/sacar_foto" />
+        android:text="@string/sacar_foto"
+        android:onClick="sacarFoto"/>
+
+    <ImageView
+        android:id="@+id/foto_perfil"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
 
     <Button
         android:backgroundTint="@color/colorPrimary"
