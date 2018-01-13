@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -27,10 +28,10 @@ import eus.ehu.tta.aupapp.modelo.User;
 public class RegisterActivity extends AppCompatActivity {
 
 
-    private final int WRITE_PERMISSION_CODE = 1;
+    private final int PICTURE_REQUEST_CODE = 1;
 
-    private final int PICTURE_REQUEST_CODE = 3;
-    private final int READ_REQUEST_CODE = 4;
+    private final int WRITE_PERMISSION_CODE = 2;
+
     Uri pictureUri;
 
     File file;
@@ -81,11 +82,6 @@ public class RegisterActivity extends AppCompatActivity {
 
         }
 
-        Bitmap bitmap = BitmapFactory.decodeFile("file:\\"+file.getAbsolutePath());
-        ImageView imageView = findViewById(R.id.foto_perfil);
-        imageView.setImageBitmap(bitmap);
-        imageView.setVisibility(View.VISIBLE);
-
 
     }
 
@@ -98,8 +94,7 @@ public class RegisterActivity extends AppCompatActivity {
                 try {
                     nombre = ((EditText)findViewById(R.id.nombre)).getText().toString();
                     file = File.createTempFile(nombre,".jpg",dir);
-                    Uri pictureUri = Uri.fromFile(file);
-                    Toast.makeText(this, pictureUri.getPath(), Toast.LENGTH_SHORT).show();
+                    pictureUri = Uri.fromFile(file);
                     intent.putExtra(MediaStore.EXTRA_OUTPUT, pictureUri);
                     startActivityForResult(intent, PICTURE_REQUEST_CODE);
                 } catch (IOException ex) {
@@ -109,6 +104,29 @@ public class RegisterActivity extends AppCompatActivity {
             }
         } else
             Toast.makeText(this, R.string.noapp, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (resultCode != Activity.RESULT_OK)
+            return;
+
+        switch (requestCode) {
+
+            case PICTURE_REQUEST_CODE:
+
+                //Toast.makeText(this, pictureUri.toString(), Toast.LENGTH_SHORT).show();
+                //Bitmap bitmap = BitmapFactory.decodeFile(pictureUri.toString());
+
+                Drawable drawable = Drawable.createFromPath(pictureUri.getPath());
+                ImageView imageView = findViewById(R.id.foto_perfil);
+                imageView.setImageDrawable(drawable);
+                imageView.setVisibility(View.VISIBLE);
+                drawable.
+
+                break;
+        }
     }
 
 

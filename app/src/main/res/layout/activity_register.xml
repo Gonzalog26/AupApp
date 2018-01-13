@@ -8,106 +8,123 @@
     android:layout_gravity="center"
     tools:context="eus.ehu.tta.aupapp.RegisterActivity">
 
-    <GridLayout
+    <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:columnCount="2">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:text="@string/nombre"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:typeface="sans"/>
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/nombre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/introducir_nombre"
-            android:typeface="sans"
-            />
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:columnCount="2">
 
-        <TextView
-            android:text="@string/primer_apellido"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:typeface="sans"/>
+                <TextView
+                    android:text="@string/nombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:typeface="sans"/>
 
-        <EditText
-            android:id="@+id/papellido"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/introducir_primer_apellido"
-            android:typeface="sans"/>
+                <EditText
+                    android:id="@+id/nombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/introducir_nombre"
+                    android:typeface="sans"
+                    />
 
-        <TextView
-            android:text="@string/segundo_apellido"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:typeface="sans"/>
+                <TextView
+                    android:text="@string/primer_apellido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:typeface="sans"/>
 
-        <EditText
-            android:id="@+id/sapellido"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/introducir_segundo_apellido"
-            android:typeface="sans"/>
+                <EditText
+                    android:id="@+id/papellido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/introducir_primer_apellido"
+                    android:typeface="sans"/>
 
-        <TextView
-            android:text="@string/password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:typeface="sans"/>
+                <TextView
+                    android:text="@string/segundo_apellido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:typeface="sans"/>
 
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/introducir_password"
-            android:inputType="textPassword"
-            android:typeface="sans"/>
+                <EditText
+                    android:id="@+id/sapellido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/introducir_segundo_apellido"
+                    android:typeface="sans"/>
 
-    </GridLayout>
+                <TextView
+                    android:text="@string/password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:typeface="sans"/>
 
-    <Button
-        android:backgroundTint="@color/colorPrimary"
-        android:textColor="@color/white"
-        android:drawableTint="@color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/accountcircle"
-        android:drawablePadding="8dp"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_gravity="center"
-        android:typeface="sans"
-        android:text="@string/sacar_foto"
-        android:onClick="sacarFoto"/>
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/introducir_password"
+                    android:inputType="textPassword"
+                    android:typeface="sans"/>
 
-    <ImageView
-        android:id="@+id/foto_perfil"
-        android:layout_width="16dp"
-        android:layout_height="16dp"
-        android:layout_gravity="center"
-        android:visibility="gone"/>
+            </GridLayout>
 
-    <Button
-        android:backgroundTint="@color/colorPrimary"
-        android:textColor="@color/white"
-        android:drawableTint="@color/white"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/boton_horizontal_margin"
-        android:layout_marginRight="@dimen/boton_horizontal_margin"
-        android:drawableLeft="@drawable/account"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_gravity="center"
-        android:typeface="sans"
-        android:text="@string/Registro"
-        android:onClick="registro"/>
+            <Button
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@color/white"
+                android:drawableTint="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/accountcircle"
+                android:drawablePadding="8dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_gravity="center"
+                android:typeface="sans"
+                android:text="@string/sacar_foto"
+                android:onClick="sacarFoto"/>
+
+            <ImageView
+                android:id="@+id/foto_perfil"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_gravity="center"
+                android:rotation="90"
+                android:visibility="gone"/>
+
+            <Button
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@color/white"
+                android:drawableTint="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/boton_horizontal_margin"
+                android:layout_marginRight="@dimen/boton_horizontal_margin"
+                android:drawableLeft="@drawable/account"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_gravity="center"
+                android:typeface="sans"
+                android:text="@string/Registro"
+                android:onClick="registro"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
 
 </LinearLayout>
