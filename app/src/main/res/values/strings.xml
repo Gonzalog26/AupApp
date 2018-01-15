@@ -113,6 +113,7 @@
     <string name="respuesta62">Nola hel naiteke...?</string>
     <string name="respuesta63">Zer moduz?</string>
 
+    <string name="conectando">Conectando...</string>
 
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>

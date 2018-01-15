@@ -3,14 +3,11 @@ package eus.ehu.tta.aupapp;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.MediaController;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -21,7 +18,7 @@ import android.widget.VideoView;
 import java.util.List;
 
 import eus.ehu.tta.aupapp.modelo.Test;
-import eus.ehu.tta.aupapp.negocio.GeneradorTest;
+import eus.ehu.tta.aupapp.negocio.GeneradorNegocio;
 
 public class TestActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -46,7 +43,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             bt.setText("Volver al menu de tests");
         }
 
-        GeneradorTest generadorTest = new GeneradorTest();
+        GeneradorNegocio generadorTest = new GeneradorNegocio();
         List<Test> tests = generadorTest.getTests();
 
         TextView enunciado = (TextView)findViewById(R.id.enunciado_test);
@@ -91,7 +88,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             RadioGroup group = (RadioGroup) findViewById(R.id.elecciones_test);
             group.removeAllViews();
 
-            GeneradorTest generadorTest = new GeneradorTest();
+            GeneradorNegocio generadorTest = new GeneradorNegocio();
             List<Test> tests = generadorTest.getTests();
 
             TextView enunciado = (TextView)findViewById(R.id.enunciado_test);

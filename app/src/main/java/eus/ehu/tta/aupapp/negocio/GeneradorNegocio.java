@@ -3,17 +3,18 @@ package eus.ehu.tta.aupapp.negocio;
 import java.util.ArrayList;
 import java.util.List;
 
-import eus.ehu.tta.aupapp.R;
 import eus.ehu.tta.aupapp.modelo.Test;
 
 /**
  * Created by tta on 10/01/18.
  */
 
-public class GeneradorTest implements InterfazTest {
+public class GeneradorNegocio implements InterfazNegocio {
 
 
-    public GeneradorTest(){}
+    public GeneradorNegocio(){}
+
+
 
     public List<Test> getTests(){
 

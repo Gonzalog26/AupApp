@@ -123,7 +123,6 @@ public class RegisterActivity extends AppCompatActivity {
                 ImageView imageView = findViewById(R.id.foto_perfil);
                 imageView.setImageDrawable(drawable);
                 imageView.setVisibility(View.VISIBLE);
-                drawable.
 
                 break;
         }
