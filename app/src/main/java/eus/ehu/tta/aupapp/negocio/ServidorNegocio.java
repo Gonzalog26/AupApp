@@ -1,20 +1,35 @@
 package eus.ehu.tta.aupapp.negocio;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import eus.ehu.tta.aupapp.modelo.Test;
+import eus.ehu.tta.aupapp.modelo.User;
 
 /**
  * Created by tta on 10/01/18.
  */
 
-public class GeneradorNegocio implements InterfazNegocio {
+public class ServidorNegocio implements InterfazNegocio {
 
+    private static final String baseUrl = "http://u017633.ehu.eus:28080/AupaAppRest";
+    private static ServidorNegocio servidorNegocio = null;
+    private ClienteRest clienteRest;
 
-    public GeneradorNegocio(){}
+    public ServidorNegocio(){
+        clienteRest = new ClienteRest(baseUrl);
+    }
 
-
+    public static ServidorNegocio getInstancia(){
+        if(servidorNegocio==null){
+            servidorNegocio = new ServidorNegocio();
+        }
+        return servidorNegocio;
+    }
 
     public List<Test> getTests(){
 
@@ -77,5 +92,44 @@ public class GeneradorNegocio implements InterfazNegocio {
         return tests;
 
     }
+
+    public String registro(String nombre, String papellido, String sapellido, String password) throws JSONException, IOException {
+
+        String login = null;
+
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("nombre",nombre);
+        jsonObject.put("apellido1",papellido);
+        jsonObject.put("apellido2",sapellido);
+        jsonObject.put("passwd",password);
+
+        login = clienteRest.postJson(jsonObject,"rest/App/addUser");
+
+
+        return login;
+
+    }
+
+    public User autenticathion(String login, String password) throws IOException,JSONException{
+
+        User user = new User();
+        String requestCode = clienteRest.getString(String.format("rest/App/requestLogin?login=%s&passwd=%s",login,password));
+
+        if(requestCode.compareToIgnoreCase("OK")==0){
+
+                JSONObject jsonObject = clienteRest.getJson(String.format("rest/App/requestUser?login=%s",login));
+                user.setNombre(jsonObject.getString("nombre"));
+                user.setPapellido(jsonObject.getString("apellido1"));
+                user.setSapellido(jsonObject.getString("apellido2"));
+
+        }
+        else{
+            user.setNombre(null);
+        }
+
+        return user;
+
+    }
+
 
 }

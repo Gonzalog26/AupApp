@@ -19,14 +19,20 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+
 import java.io.File;
 import java.io.IOException;
 
 import eus.ehu.tta.aupapp.modelo.User;
+import eus.ehu.tta.aupapp.negocio.ProgressTask;
+import eus.ehu.tta.aupapp.negocio.ServidorNegocio;
 
 
 public class RegisterActivity extends AppCompatActivity {
 
+
+    ServidorNegocio servidorNegocio = new ServidorNegocio();
 
     private final int PICTURE_REQUEST_CODE = 1;
 
@@ -47,20 +53,41 @@ public class RegisterActivity extends AppCompatActivity {
     public void registro(View view){
 
         nombre = ((EditText)findViewById(R.id.nombre)).getText().toString();
-        String papellido = ((EditText)findViewById(R.id.papellido)).getText().toString();
-        String sapellido = ((EditText)findViewById(R.id.sapellido)).getText().toString();
-        String password = ((EditText)findViewById(R.id.password)).getText().toString();
+        final String papellido = ((EditText)findViewById(R.id.papellido)).getText().toString();
+        final String sapellido = ((EditText)findViewById(R.id.sapellido)).getText().toString();
+        final String password = ((EditText)findViewById(R.id.password)).getText().toString();
 
-        String login = User.registro(nombre,papellido,sapellido,password);
 
-        Intent intent = new Intent(this, MenuActivity.class);
-        Bundle extras = new Bundle();
-        extras.putString("EXTRA_LOGIN",login);
-        extras.putString("EXTRA_NOMBRE",nombre);
-        extras.putString("EXTRA_PAPELLIDO",papellido);
-        extras.putString("EXTRA_SAPELLIDO",sapellido);
-        intent.putExtras(extras);
-        startActivity(intent);
+        new ProgressTask<String>(this){
+
+            @Override
+            protected String work() throws IOException, JSONException {
+                return servidorNegocio.registro(nombre, papellido, sapellido,password);
+            }
+
+            @Override
+            protected void onFinish(String result){
+                Intent intent = new Intent(context, MenuActivity.class);
+                Bundle extras = new Bundle();
+                extras.putString("EXTRA_LOGIN",result);
+                extras.putString("EXTRA_NOMBRE",nombre);
+                extras.putString("EXTRA_PAPELLIDO",papellido);
+                extras.putString("EXTRA_SAPELLIDO",sapellido);
+
+                Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+
+                intent.putExtras(extras);
+                startActivity(intent);
+            }
+
+            @Override
+            protected void onCancelled() {
+                super.onCancelled();
+                Toast.makeText(getApplicationContext(), R.string.errorregistro, Toast.LENGTH_SHORT).show();
+            }
+
+        }.execute();
+
 
     }
 

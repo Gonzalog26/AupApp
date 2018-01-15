@@ -21,11 +21,14 @@
     <string name="sacar_foto_opcional">Sacar foto (Opcional)</string>
     <string name="nocamara">El dispositivo movil no dispone de camara</string>
     <string name="noapp">EL dispositivo no dispone de ninguna aplicación para sacar foto</string>
+    <string name="errorregistro">Ha ocurrido un error en el registro</string>
 
     <!-- Strings para el logeo -->
     <string name="login">Login</string>
     <string name="introducir_login">Introduzca su login</string>
     <string name="sign_in">Logearse</string>
+    <string name="nocoincidencias">El usuario o contraseña no son correctos</string>
+    <string name="errorlogeo">Ha ocurrido un error en el logeo</string>
 
 
     <!-- menu -->
@@ -114,6 +117,7 @@
     <string name="respuesta63">Zer moduz?</string>
 
     <string name="conectando">Conectando...</string>
+    <string name="vovlermenu">Volver al menu</string>
 
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>

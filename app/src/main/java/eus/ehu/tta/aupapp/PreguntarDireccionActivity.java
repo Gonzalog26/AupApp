@@ -12,7 +12,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import eus.ehu.tta.aupapp.modelo.Test;
-import eus.ehu.tta.aupapp.negocio.GeneradorNegocio;
+import eus.ehu.tta.aupapp.negocio.ServidorNegocio;
 
 public class PreguntarDireccionActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -23,7 +23,7 @@ public class PreguntarDireccionActivity extends AppCompatActivity implements Vie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tests);
 
-        GeneradorNegocio generadorTest = new GeneradorNegocio();
+        ServidorNegocio generadorTest = new ServidorNegocio();
         List<Test> tests = generadorTest.getTests();
 
         TextView enunciado = (TextView)findViewById(R.id.enunciado_test);

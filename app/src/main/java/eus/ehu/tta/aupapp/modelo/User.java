@@ -6,16 +6,42 @@ package eus.ehu.tta.aupapp.modelo;
 
 public class User {
 
-    public static String registro(String nombre, String papellido, String sapellido, String password){
+    private String nombre;
+    private String papellido;
+    private String sapellido;
+    private String passwd;
 
-        String login="ggi0";
+    public User(){}
 
-        return login;
-
+    public String getNombre() {
+        return nombre;
     }
 
-    public static boolean autenticathion(String login, String password){
-        return true;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
+    public String getPapellido() {
+        return papellido;
+    }
+
+    public void setPapellido(String papellido) {
+        this.papellido = papellido;
+    }
+
+    public String getSapellido() {
+        return sapellido;
+    }
+
+    public void setSapellido(String sapellido) {
+        this.sapellido = sapellido;
+    }
+
+    public String getPasswd() {
+        return passwd;
+    }
+
+    public void setPasswd(String passwd) {
+        this.passwd = passwd;
+    }
 }

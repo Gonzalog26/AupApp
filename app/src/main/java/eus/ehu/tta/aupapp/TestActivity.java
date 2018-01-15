@@ -18,7 +18,7 @@ import android.widget.VideoView;
 import java.util.List;
 
 import eus.ehu.tta.aupapp.modelo.Test;
-import eus.ehu.tta.aupapp.negocio.GeneradorNegocio;
+import eus.ehu.tta.aupapp.negocio.ServidorNegocio;
 
 public class TestActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -43,7 +43,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             bt.setText("Volver al menu de tests");
         }
 
-        GeneradorNegocio generadorTest = new GeneradorNegocio();
+        ServidorNegocio generadorTest = new ServidorNegocio();
         List<Test> tests = generadorTest.getTests();
 
         TextView enunciado = (TextView)findViewById(R.id.enunciado_test);
@@ -88,7 +88,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             RadioGroup group = (RadioGroup) findViewById(R.id.elecciones_test);
             group.removeAllViews();
 
-            GeneradorNegocio generadorTest = new GeneradorNegocio();
+            ServidorNegocio generadorTest = new ServidorNegocio();
             List<Test> tests = generadorTest.getTests();
 
             TextView enunciado = (TextView)findViewById(R.id.enunciado_test);

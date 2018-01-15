@@ -36,4 +36,16 @@
         android:text="@string/verEventos"
         android:onClick="verEventos"/>
 
+    <Button
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:drawableTint="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_gravity="bottom"
+        android:typeface="sans"
+        android:text="@string/vovlermenu"
+        android:onClick="atras"/>
+
 </LinearLayout>

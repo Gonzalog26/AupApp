@@ -22,4 +22,9 @@ public class EventosMenuActivity extends AppCompatActivity {
         Intent intent = new Intent(this, VerEventosActivity.class);
         startActivity(intent);
     }
+
+    public void atras(View view){
+        Intent intent = new Intent(this, MenuActivity.class);
+        startActivity(intent);
+    }
 }
