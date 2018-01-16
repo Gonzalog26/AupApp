@@ -1,7 +1,11 @@
 package eus.ehu.tta.aupapp.negocio;
 
+import org.json.JSONException;
+
+import java.io.IOException;
 import java.util.List;
 
+import eus.ehu.tta.aupapp.modelo.Event;
 import eus.ehu.tta.aupapp.modelo.Test;
 
 /**
@@ -10,4 +14,5 @@ import eus.ehu.tta.aupapp.modelo.Test;
 
 public interface InterfazNegocio {
         public List<Test> getTests();
+        public List<Event> getEventos(int fechaInicial, int fechaFinal) throws JSONException,IOException;
 }

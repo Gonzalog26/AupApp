@@ -1,5 +1,6 @@
 package eus.ehu.tta.aupapp.negocio;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -7,6 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import eus.ehu.tta.aupapp.modelo.Event;
 import eus.ehu.tta.aupapp.modelo.Test;
 import eus.ehu.tta.aupapp.modelo.User;
 
@@ -128,6 +130,27 @@ public class ServidorNegocio implements InterfazNegocio {
         }
 
         return user;
+
+    }
+
+    public List<Event> getEventos(int fechaInicial, int fechaFinal)throws JSONException,IOException{
+
+        List<Event> events = new ArrayList<>();
+        Event event;
+        JSONObject jsonObject = clienteRest.getJson(String.format("rest/App/requestEvents?fechaInicial=%s&fechaFinal=%s",fechaInicial,fechaFinal));
+
+        JSONArray jsonArray = jsonObject.getJSONArray("nombre");
+
+        for(int i=0;i<jsonArray.length();i++){
+
+            event= new Event();
+            JSONObject item = jsonArray.getJSONObject(i);
+            event.setNombre(item.getString("Nombre"));
+
+            events.add(event);
+        }
+
+        return events;
 
     }
 

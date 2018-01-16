@@ -119,8 +119,7 @@ public class RegisterActivity extends AppCompatActivity {
                 File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
 
                 try {
-                    nombre = ((EditText)findViewById(R.id.nombre)).getText().toString();
-                    file = File.createTempFile(nombre,".jpg",dir);
+                    file = File.createTempFile("provisional",".jpg",dir);
                     pictureUri = Uri.fromFile(file);
                     intent.putExtra(MediaStore.EXTRA_OUTPUT, pictureUri);
                     startActivityForResult(intent, PICTURE_REQUEST_CODE);
