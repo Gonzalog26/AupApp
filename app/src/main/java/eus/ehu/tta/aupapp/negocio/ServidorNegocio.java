@@ -133,19 +133,23 @@ public class ServidorNegocio implements InterfazNegocio {
 
     }
 
-    public List<Event> getEventos(int fechaInicial, int fechaFinal)throws JSONException,IOException{
+    public List<Event> getEventos(int fechaInicial, int fechaFinal,String login)throws JSONException,IOException{
 
         List<Event> events = new ArrayList<>();
         Event event;
-        JSONObject jsonObject = clienteRest.getJson(String.format("rest/App/requestEvents?fechaInicial=%s&fechaFinal=%s",fechaInicial,fechaFinal));
+        JSONArray jsonArray = clienteRest.getJsonArray("rest/App/requestEvents?fechaInicial="+fechaInicial+"&fechaFinal="+fechaFinal+"&login="+login);
 
-        JSONArray jsonArray = jsonObject.getJSONArray("nombre");
 
         for(int i=0;i<jsonArray.length();i++){
 
             event= new Event();
             JSONObject item = jsonArray.getJSONObject(i);
-            event.setNombre(item.getString("Nombre"));
+            event.setNombre(item.getString("nombre"));
+            event.setDescripcion(item.getString("descripcion"));
+            event.setUbicacion(item.getString("ubicacion"));
+            event.setFecha(item.getInt("fecha"));
+            event.setHora(item.getInt("hora"));
+            event.setFoto(item.getString("foto"));
 
             events.add(event);
         }

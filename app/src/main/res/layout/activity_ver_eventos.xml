@@ -7,56 +7,74 @@
     android:orientation="vertical"
     tools:context="eus.ehu.tta.aupapp.VerEventosActivity">
 
-    <GridLayout
+    <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:columnCount="2">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:text="@string/fecha_inicial"
+        <LinearLayout
+            android:id="@+id/layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:typeface="sans"/>
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/fecha_inicial"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/introducir_fecha_inicial"
-            android:typeface="sans"
-            />
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:columnCount="2">
 
-        <TextView
-            android:text="@string/fecha_final"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:typeface="sans"/>
+                <TextView
+                    android:text="@string/fecha_inicial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:typeface="sans"/>
 
-        <EditText
-            android:id="@+id/fecha_final"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/introducir_fecha_final"
-            android:typeface="sans"/>
+                <EditText
+                    android:id="@+id/fecha_inicial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/introducir_fecha_inicial"
+                    android:typeface="sans"
+                    />
 
-    </GridLayout>
+                <TextView
+                    android:text="@string/fecha_final"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:typeface="sans"/>
 
-    <Button
-        android:backgroundTint="@color/colorPrimary"
-        android:textColor="@color/white"
-        android:drawableTint="@color/white"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/boton_horizontal_margin"
-        android:layout_marginRight="@dimen/boton_horizontal_margin"
-        android:drawableLeft="@drawable/calendar"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_gravity="center"
-        android:typeface="sans"
-        android:text="@string/verEventos"
-        android:onClick="verEventos"/>
+                <EditText
+                    android:id="@+id/fecha_final"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/introducir_fecha_final"
+                    android:typeface="sans"/>
+
+            </GridLayout>
+
+            <Button
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@color/white"
+                android:drawableTint="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/boton_horizontal_margin"
+                android:layout_marginRight="@dimen/boton_horizontal_margin"
+                android:drawableLeft="@drawable/calendar"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_gravity="center"
+                android:typeface="sans"
+                android:text="@string/verEventos"
+                android:onClick="verEventos"/>
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
 
 </LinearLayout>

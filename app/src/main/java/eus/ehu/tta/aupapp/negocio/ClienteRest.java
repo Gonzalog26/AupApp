@@ -2,6 +2,7 @@ package eus.ehu.tta.aupapp.negocio;
 
 import android.util.Base64;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -69,6 +70,10 @@ public class ClienteRest {
 
     public JSONObject getJson(String path) throws IOException, JSONException{
         return new JSONObject(getString(path));
+    }
+
+    public JSONArray getJsonArray(String path) throws IOException, JSONException{
+        return new JSONArray(getString(path));
     }
 
     public int postFile(String path, InputStream is, String fileName) throws IOException{

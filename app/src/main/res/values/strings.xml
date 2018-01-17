@@ -65,6 +65,7 @@
     <string name="fecha_final">Fecha final: </string>
     <string name="introducir_fecha_inicial">Introduzca la fecha inicial de los eventos a ver</string>
     <string name="introducir_fecha_final">Introduzca la fecha final de los eventos a ver</string>
+    <string name="errorvereventos">Error al ver los eventos</string>
 
     <!-- Strings para conoce bizkaia -->
     <string name="lugares_bizkaia">Lugares</string>
