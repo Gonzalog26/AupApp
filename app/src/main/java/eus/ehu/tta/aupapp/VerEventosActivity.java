@@ -1,11 +1,15 @@
 package eus.ehu.tta.aupapp;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Layout;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -56,26 +60,40 @@ public class VerEventosActivity extends AppCompatActivity {
 
                 for(int i=0;i<result.size();i++){
 
-                    /*ImageView imageView = new ImageView(context);
-                    Drawable drawable = Drawable.createFromPath(baseUrl+result.get(i).getFoto());
-                    imageView.setImageDrawable(drawable);
-                    linearLayout.addView(imageView);*/
-
                     TextView textView = new TextView(context);
-                    textView.setText("Nombre: "+result.get(i).getNombre());
+                    textView.setText(result.get(i).getNombre());
+                    textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP,25);
+                    LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                    layoutParams.setMargins(0,0,0,50);
+                    layoutParams.gravity=Gravity.CENTER;
+                    textView.setLayoutParams(layoutParams);
+                    textView.setTypeface(null, Typeface.BOLD);
                     linearLayout.addView(textView);
 
-                    TextView textView2 = new TextView(context);
+                    ImageView imageView = new ImageView(context);
+                    Drawable drawable = Drawable.createFromPath(baseUrl+result.get(i).getFoto());
+                    imageView.setImageDrawable(drawable);
+                    linearLayout.addView(imageView);
+
+                    textView = new TextView(context);
                     textView.setText("Fecha: "+result.get(i).getFecha());
-                    linearLayout.addView(textView2);
+                    linearLayout.addView(textView);
 
-                    TextView textView3 = new TextView(context);
+                    textView = new TextView(context);
                     textView.setText("Hora: "+result.get(i).getHora());
-                    linearLayout.addView(textView3);
+                    linearLayout.addView(textView);
 
-                    TextView textView4 = new TextView(context);
+                    textView = new TextView(context);
                     textView.setText("Descripcion: "+result.get(i).getDescripcion());
-                    linearLayout.addView(textView4);
+                    linearLayout.addView(textView);
+
+                    Button button = new Button(context);
+                    button.setText("Ver ubicacion");
+                    button.setGravity(Gravity.CENTER);
+                    linearLayout.addView(button);
+
+                    layoutParams.gravity=Gravity.NO_GRAVITY;
+                    textView.setLayoutParams(layoutParams);
 
 
                 }
