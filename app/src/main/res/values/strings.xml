@@ -131,5 +131,6 @@
     </string>
 
     <string name="preference_file_key">FicheroPreferencias</string>
+    <string name="ver_ubicacion">Ver ubicacion</string>
 
 </resources>
