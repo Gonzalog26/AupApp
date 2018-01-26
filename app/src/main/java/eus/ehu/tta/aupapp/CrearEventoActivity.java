@@ -71,6 +71,7 @@ public class CrearEventoActivity extends AppCompatActivity {
             protected Integer work() throws IOException, JSONException {
                 String[] strings = PATH.split("/");
                 String fileName = strings[strings.length - 1];
+
                 InputStream is = null;
                 File file = new File(PATH);
                 is = new FileInputStream(file);

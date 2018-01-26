@@ -89,7 +89,12 @@ public class ClienteRest {
             connection.setDoOutput(true);
             DataOutputStream out = new DataOutputStream(connection.getOutputStream());
             out.writeBytes(prefix + boundary + newLine);
+            out.writeBytes("Content-Disposition: form-data; name=\"filetype\""+newLine);
+            out.writeBytes(newLine);
+            out.writeBytes("img"+newLine);
+            out.writeBytes(prefix+boundary+newLine);
             out.writeBytes("Content-Disposition: form-data; name=\"file\";filename=\""+fileName+"\""+newLine);
+            out.writeBytes("Content-Type: image/jpg"+newLine);
             out.writeBytes(newLine);
             byte[] data = new byte[1024*1024];
             int len;
