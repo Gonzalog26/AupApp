@@ -7,6 +7,23 @@
     android:orientation="vertical"
     tools:context="eus.ehu.tta.aupapp.PerfilUsuarioActivity">
 
+    <TextView
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:text="@string/perfil_usuario"/>
+
+
+    <ImageView
+        android:id="@+id/foto_perfil"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_gravity="center" />
+
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,7 +40,6 @@
 
         <TextView
             android:id="@+id/frase_nombre_apellidos"
-            android:layout_marginLeft="@dimen/boton_horizontal_margin"
             android:layout_marginRight="@dimen/boton_horizontal_margin"
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_width="wrap_content"
@@ -40,7 +56,6 @@
 
         <TextView
             android:id="@+id/frase_login"
-            android:layout_marginLeft="@dimen/boton_horizontal_margin"
             android:layout_marginRight="@dimen/boton_horizontal_margin"
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_width="wrap_content"

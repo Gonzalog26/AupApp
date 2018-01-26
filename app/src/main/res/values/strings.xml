@@ -59,6 +59,8 @@
     <string name="ubicacion_evento">Ubicacion: </string>
     <string name="introducir_ubicacion_evento">Introduzca la ubicacion del evento</string>
     <string name="sacar_foto">Sacar foto</string>
+    <string name="evento_correcto">Evento creado correctamente</string>
+    <string name="evento_no_correcto">El evento no se ha podido crear</string>
 
     <!-- Strings para ver evento -->
     <string name="fecha_inicial">Fecha inicial: </string>
@@ -127,4 +129,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <string name="preference_file_key">FicheroPreferencias</string>
+
 </resources>

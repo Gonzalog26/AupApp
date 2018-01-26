@@ -2,13 +2,17 @@ package eus.ehu.tta.aupapp;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Environment;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -18,6 +22,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 
@@ -39,6 +45,8 @@ public class RegisterActivity extends AppCompatActivity {
     private final int WRITE_PERMISSION_CODE = 2;
 
     Uri pictureUri;
+    public static String Provisional_Path;
+    public static String Final_Path="/storage/emulated/0/Pictures/";
 
     File file;
 
@@ -67,12 +75,27 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             protected void onFinish(String result){
+
+
+                File file = new File(pictureUri.getPath());
+                Final_Path = Final_Path+result+".jpg";
+                File file2 = new File(Final_Path);
+
+
+                file.renameTo(file2);
+
                 Intent intent = new Intent(context, MenuActivity.class);
                 Bundle extras = new Bundle();
                 extras.putString("EXTRA_LOGIN",result);
-                extras.putString("EXTRA_NOMBRE",nombre);
-                extras.putString("EXTRA_PAPELLIDO",papellido);
+                //extras.putString("EXTRA_NOMBRE",nombre);
+                //extras.putString("EXTRA_PAPELLIDO",papellido);
                 extras.putString("EXTRA_SAPELLIDO",sapellido);
+
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("Nombre",nombre);
+                editor.putString("PrimerApellido",papellido);
+                editor.commit();
 
                 Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
 
@@ -121,6 +144,7 @@ public class RegisterActivity extends AppCompatActivity {
                 try {
                     file = File.createTempFile("provisional",".jpg",dir);
                     pictureUri = Uri.fromFile(file);
+                    Provisional_Path=pictureUri.getPath();
                     intent.putExtra(MediaStore.EXTRA_OUTPUT, pictureUri);
                     startActivityForResult(intent, PICTURE_REQUEST_CODE);
                 } catch (IOException ex) {
@@ -142,17 +166,15 @@ public class RegisterActivity extends AppCompatActivity {
 
             case PICTURE_REQUEST_CODE:
 
-                //Toast.makeText(this, pictureUri.toString(), Toast.LENGTH_SHORT).show();
-                //Bitmap bitmap = BitmapFactory.decodeFile(pictureUri.toString());
-
-                Drawable drawable = Drawable.createFromPath(pictureUri.getPath());
-                ImageView imageView = findViewById(R.id.foto_perfil);
-                imageView.setImageDrawable(drawable);
+                ImageView imageView = (ImageView) findViewById(R.id.foto_perfil_registro);
+                Picasso.with(this).load("file://"+Provisional_Path).resize(1000,1000).into(imageView);
                 imageView.setVisibility(View.VISIBLE);
 
                 break;
         }
     }
+
+
 
 
 }

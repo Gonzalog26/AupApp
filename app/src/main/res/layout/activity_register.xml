@@ -98,12 +98,11 @@
                 android:onClick="sacarFoto"/>
 
             <ImageView
-                android:id="@+id/foto_perfil"
+                android:id="@+id/foto_perfil_registro"
                 android:layout_width="300dp"
                 android:layout_height="300dp"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:layout_gravity="center"
-                android:rotation="90"
                 android:visibility="gone"/>
 
             <Button

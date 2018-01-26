@@ -13,15 +13,17 @@
 
         <LinearLayout
             android:id="@+id/layout"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginBottom="@dimen/activity_vertical_margin">
+            android:layout_gravity="center"
+              >
 
             <GridLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:columnCount="2">
 
                 <TextView
@@ -70,12 +72,26 @@
                 android:text="@string/verEventos"
                 android:onClick="verEventos"/>
 
+            <Button
+                android:id="@+id/boton_ubicacion"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@color/white"
+                android:drawableTint="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_gravity="center"
+                android:typeface="sans"
+                android:text="@string/ubicacion_evento"
+                android:visibility="gone"/>
 
 
         </LinearLayout>
 
 
     </ScrollView>
+
+
 
 
 </LinearLayout>

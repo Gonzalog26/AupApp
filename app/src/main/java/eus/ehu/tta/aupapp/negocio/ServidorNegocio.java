@@ -1,10 +1,13 @@
 package eus.ehu.tta.aupapp.negocio;
 
+import android.widget.Toast;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +22,8 @@ import eus.ehu.tta.aupapp.modelo.User;
 public class ServidorNegocio implements InterfazNegocio {
 
     private static final String baseUrl = "http://u017633.ehu.eus:28080/AupaAppRest";
+
+
     private static ServidorNegocio servidorNegocio = null;
     private ClienteRest clienteRest;
 
@@ -109,6 +114,27 @@ public class ServidorNegocio implements InterfazNegocio {
 
 
         return login;
+
+    }
+
+    public int addEventos(String nombre, String descripcion, int fecha, int hora, String foto, String ubicacion, String login, InputStream is) throws JSONException, IOException {
+
+
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("nombre",nombre);
+        jsonObject.put("fecha",fecha);
+        jsonObject.put("hora",hora);
+        jsonObject.put("ubicacion",ubicacion);
+        jsonObject.put("descripcion",descripcion);
+        jsonObject.put("login",login);
+        jsonObject.put("foto",foto);
+
+        Integer responseCode = clienteRest.postFile("rest/App/uploadFile",is,foto);
+
+        Integer a = responseCode+1;
+
+        return clienteRest.postJson2(jsonObject,"rest/App/addEvent");
+
 
     }
 

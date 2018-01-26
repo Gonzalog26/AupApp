@@ -85,7 +85,7 @@ public class ClienteRest {
             connection = getConnection(path);
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "multipart/form-data;boundary=" +
-                    "boundary");
+                    boundary);
             connection.setDoOutput(true);
             DataOutputStream out = new DataOutputStream(connection.getOutputStream());
             out.writeBytes(prefix + boundary + newLine);
@@ -125,6 +125,27 @@ public class ClienteRest {
             }
             
             return login;
+        } finally {
+            if (conn != null)
+                conn.disconnect();
+        }
+    }
+
+    public int postJson2(final JSONObject json, String path) throws IOException {
+
+        HttpURLConnection conn = null;
+
+        try {
+            String login = null;
+            conn = getConnection(path);
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+            conn.setDoOutput(true);
+            PrintWriter printWriter = new PrintWriter(conn.getOutputStream());
+            printWriter.print(json.toString());
+            printWriter.close();
+
+            return conn.getResponseCode();
         } finally {
             if (conn != null)
                 conn.disconnect();

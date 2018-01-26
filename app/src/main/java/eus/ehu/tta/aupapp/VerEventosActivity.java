@@ -16,6 +16,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
 import org.json.JSONException;
 
 import java.io.IOException;
@@ -40,10 +42,13 @@ public class VerEventosActivity extends AppCompatActivity {
     public void verEventos(View view){
 
         //Funcion para crear la View con los eventos entre las fechas indicadas
-        final String baseUrl = "http://u017633.ehu.eus:28080/static/AupaAppRest/";
+        final String baseUrl = "http://u017633.ehu.eus:28080/static/AupaAppRest/img/";
 
-        final int fechaInicial = Integer.parseInt(((EditText)findViewById(R.id.fecha_inicial)).getText().toString());
-        final int fechaFinal = Integer.parseInt(((EditText)findViewById(R.id.fecha_final)).getText().toString());
+        /*final int fechaInicial = Integer.parseInt(((EditText)findViewById(R.id.fecha_inicial)).getText().toString());
+        final int fechaFinal = Integer.parseInt(((EditText)findViewById(R.id.fecha_final)).getText().toString());*/
+
+        final int fechaInicial = 20171220;
+        final int fechaFinal = 20171221;
 
         new ProgressTask<List<Event>>(this){
 
@@ -56,6 +61,9 @@ public class VerEventosActivity extends AppCompatActivity {
             protected void onFinish(List<Event> result){
 
                 LinearLayout linearLayout = (LinearLayout) findViewById(R.id.layout);
+
+                Button button = (Button)findViewById(R.id.boton_ubicacion);
+
                 linearLayout.removeAllViews();
 
                 for(int i=0;i<result.size();i++){
@@ -71,8 +79,7 @@ public class VerEventosActivity extends AppCompatActivity {
                     linearLayout.addView(textView);
 
                     ImageView imageView = new ImageView(context);
-                    Drawable drawable = Drawable.createFromPath(baseUrl+result.get(i).getFoto());
-                    imageView.setImageDrawable(drawable);
+                    Picasso.with(context).load(baseUrl+result.get(i).getFoto()).resize(1000,1000).into(imageView);
                     linearLayout.addView(imageView);
 
                     textView = new TextView(context);
@@ -87,13 +94,11 @@ public class VerEventosActivity extends AppCompatActivity {
                     textView.setText("Descripcion: "+result.get(i).getDescripcion());
                     linearLayout.addView(textView);
 
-                    Button button = new Button(context);
-                    button.setText("Ver ubicacion");
-                    button.setGravity(Gravity.CENTER);
-                    linearLayout.addView(button);
+                    /*button.setVisibility(View.VISIBLE);
+                    linearLayout.addView(button);*/
 
-                    layoutParams.gravity=Gravity.NO_GRAVITY;
-                    textView.setLayoutParams(layoutParams);
+                    /*layoutParams.gravity=Gravity.NO_GRAVITY;
+                    textView.setLayoutParams(layoutParams);*/
 
 
                 }

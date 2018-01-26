@@ -7,115 +7,141 @@
     android:orientation="vertical"
     tools:context="eus.ehu.tta.aupapp.CrearEventoActivity">
 
-    <GridLayout
+    <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:columnCount="2">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:text="@string/nombre"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:typeface="sans"/>
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/nombre_evento"
+        <GridLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/introducir_nombre_evento"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:columnCount="2">
+
+            <TextView
+                android:text="@string/nombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:typeface="sans"/>
+
+            <EditText
+                android:id="@+id/nombre_evento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/introducir_nombre_evento"
+                android:typeface="sans"
+                />
+
+            <TextView
+                android:text="@string/fecha_evento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:typeface="sans"/>
+
+            <EditText
+                android:id="@+id/fecha_evento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/introducir_fecha_evento"
+                android:typeface="sans"/>
+
+            <TextView
+                android:text="@string/hora_evento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:typeface="sans"/>
+
+            <EditText
+                android:id="@+id/hora_evento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/introducir_hora_evento"
+                android:typeface="sans"/>
+
+
+            <TextView
+                android:text="@string/ubicacion_evento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:typeface="sans"/>
+
+            <EditText
+                android:id="@+id/ubicacion_evento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/introducir_ubicacion_evento"
+                android:inputType="textPassword"
+                android:typeface="sans"/>
+
+            <TextView
+                android:text="@string/descripcion_evento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:typeface="sans"/>
+
+            <EditText
+                android:id="@+id/descripcion_evento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/introducir_descripcion_evento"
+                android:inputType="textPassword"
+                android:typeface="sans"/>
+
+        </GridLayout>
+
+        <Button
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:drawableTint="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/camera"
+            android:drawablePadding="8dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_gravity="center"
             android:typeface="sans"
-            />
+            android:text="@string/sacar_foto"
+            android:onClick="sacarFoto"/>
 
-        <TextView
-            android:text="@string/fecha_evento"
-            android:layout_width="wrap_content"
+
+        <ImageView
+            android:id="@+id/foto_perfil2"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_gravity="center"
+            android:rotation="90"
+            android:visibility="gone"/>
+
+        <Button
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:drawableTint="@color/white"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:typeface="sans"/>
+            android:layout_marginLeft="@dimen/boton_horizontal_margin"
+            android:layout_marginRight="@dimen/boton_horizontal_margin"
+            android:drawableLeft="@drawable/upload"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_gravity="center"
+            android:typeface="sans"
+            android:text="@string/crearEvento"
+            android:onClick="crearEvento"/>
 
-        <EditText
-            android:id="@+id/fecha_evento"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/introducir_fecha_evento"
-            android:typeface="sans"/>
+        </LinearLayout>
 
-        <TextView
-            android:text="@string/hora_evento"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:typeface="sans"/>
+    </ScrollView>
 
-        <EditText
-            android:id="@+id/hora_evento"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/introducir_hora_evento"
-            android:typeface="sans"/>
 
-        <TextView
-            android:text="@string/ubicacion_evento"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:typeface="sans"/>
-
-        <EditText
-            android:id="@+id/ubicacion_evento"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/introducir_ubicacion_evento"
-            android:inputType="textPassword"
-            android:typeface="sans"/>
-
-        <TextView
-            android:text="@string/descripcion_evento"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:typeface="sans"/>
-
-        <EditText
-            android:id="@+id/descripcion_evento"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/introducir_descripcion_evento"
-            android:inputType="textPassword"
-            android:typeface="sans"/>
-
-    </GridLayout>
-
-    <Button
-        android:backgroundTint="@color/colorPrimary"
-        android:textColor="@color/white"
-        android:drawableTint="@color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/camera"
-        android:drawablePadding="8dp"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_gravity="center"
-        android:typeface="sans"
-        android:text="@string/sacar_foto"
-        android:onClick="sacarFoto"/>
-
-    <Button
-        android:backgroundTint="@color/colorPrimary"
-        android:textColor="@color/white"
-        android:drawableTint="@color/white"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/boton_horizontal_margin"
-        android:layout_marginRight="@dimen/boton_horizontal_margin"
-        android:drawableLeft="@drawable/upload"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_gravity="center"
-        android:typeface="sans"
-        android:text="@string/crearEvento"
-        android:onClick="crearEvento"/>
 
 
 
