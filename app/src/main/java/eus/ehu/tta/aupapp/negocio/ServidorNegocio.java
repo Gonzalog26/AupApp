@@ -21,8 +21,8 @@ import eus.ehu.tta.aupapp.modelo.User;
 
 public class ServidorNegocio implements InterfazNegocio {
 
-    //private static final String baseUrl = "http://u017633.ehu.eus:28080/AupaAppRest";
-    private static final String baseUrl = "http://192.168.0.163:8080/AupaAppRest";
+    private static final String baseUrl = "http://u017633.ehu.eus:28080/AupaAppRest";
+    //private static final String baseUrl = "http://192.168.0.163:8080/AupaAppRest";
 
     private static ServidorNegocio servidorNegocio = null;
     private ClienteRest clienteRest;

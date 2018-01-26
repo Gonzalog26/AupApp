@@ -37,33 +37,60 @@
                 android:typeface="sans"
                 />
 
-            <TextView
-                android:text="@string/fecha_evento"
+            <ImageButton
+                android:id="@+id/ib_obtener_fecha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:typeface="sans"/>
+                android:src="@drawable/ic_event_white_24dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/et_mostrar_fecha_picker"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintHorizontal_bias="0.505"
+                android:layout_marginTop="32dp"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                tools:ignore="ContentDescription" />
 
             <EditText
-                android:id="@+id/fecha_evento"
+                android:id="@+id/et_mostrar_fecha_picker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/introducir_fecha_evento"
-                android:typeface="sans"/>
+                android:ems="5"
+                android:inputType="date"
+                android:hint="@string/formato_fecha"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="32dp"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-            <TextView
-                android:text="@string/hora_evento"
+
+            <ImageButton
+                android:id="@+id/ib_obtener_hora"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:typeface="sans"/>
+                android:src="@drawable/ic_access_time_white_24dp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="32dp"
+                app:layout_constraintTop_toBottomOf="@+id/et_mostrar_fecha_picker"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintLeft_toRightOf="@+id/et_mostrar_hora_picker"
+                android:layout_marginStart="8dp"
+                app:layout_constraintHorizontal_bias="0.504"
+                tools:ignore="ContentDescription" />
 
             <EditText
-                android:id="@+id/hora_evento"
+                android:id="@+id/et_mostrar_hora_picker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/introducir_hora_evento"
-                android:typeface="sans"/>
+                android:ems="3"
+                android:inputType="time"
+                android:hint="@string/formato_hora"
+                android:layout_marginTop="32dp"
+                app:layout_constraintTop_toBottomOf="@+id/et_mostrar_fecha_picker"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintLeft_toLeftOf="parent" />
 
 
             <TextView
@@ -78,7 +105,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="@string/introducir_ubicacion_evento"
-                android:inputType="textPassword"
                 android:typeface="sans"/>
 
             <TextView
@@ -93,7 +119,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="@string/introducir_descripcion_evento"
-                android:inputType="textPassword"
                 android:typeface="sans"/>
 
         </GridLayout>
@@ -117,9 +142,8 @@
             android:id="@+id/foto_perfil2"
             android:layout_width="300dp"
             android:layout_height="300dp"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginTop="8dp"
             android:layout_gravity="center"
-            android:rotation="90"
             android:visibility="gone"/>
 
         <Button
