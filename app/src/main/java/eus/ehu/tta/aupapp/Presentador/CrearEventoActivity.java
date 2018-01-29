@@ -1,14 +1,12 @@
-package eus.ehu.tta.aupapp;
+package eus.ehu.tta.aupapp.Presentador;
 
 import android.Manifest;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -34,11 +32,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Calendar;
 
-import eus.ehu.tta.aupapp.negocio.ProgressTask;
-import eus.ehu.tta.aupapp.negocio.ServidorNegocio;
+import eus.ehu.tta.aupapp.R;
+import eus.ehu.tta.aupapp.modelo.ProgressTask;
+import eus.ehu.tta.aupapp.modelo.ServidorNegocio;
 
 public class CrearEventoActivity extends AppCompatActivity implements View.OnClickListener{
 
+    boolean foto;
     //Variables necesarias para obtener la fecha
     int fecha;
     private static final String CERO = "0";
@@ -83,6 +83,10 @@ public class CrearEventoActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_evento);
 
+        foto=false;
+        hora2=0;
+        fecha=0;
+
         //Widget EditText donde se mostrara la fecha obtenida
         etFecha = (EditText) findViewById(R.id.et_mostrar_fecha_picker);
         //Widget ImageButton del cual usaremos el evento clic para obtener la fecha
@@ -100,49 +104,58 @@ public class CrearEventoActivity extends AppCompatActivity implements View.OnCli
 
     public void crearEvento(View view) throws IOException, JSONException {
 
-        //Funciones necesarias para crear el evento
-
         final String nombre = ((EditText)findViewById(R.id.nombre_evento)).getText().toString();
         final String descripcion = ((EditText)findViewById(R.id.descripcion_evento)).getText().toString();
         final String ubicacion = ((EditText)findViewById(R.id.ubicacion_evento)).getText().toString();
 
-        //final int hora =  Integer.parseInt(((EditText)findViewById(R.id.hora_evento)).getText().toString());
-        //final int fecha = Integer.parseInt(((EditText)findViewById(R.id.fecha_evento)).getText().toString());
+        SharedPreferences sharedPreferences = getSharedPreferences("MisPreferencias",MODE_PRIVATE);
+        final String login = sharedPreferences.getString("login","");
 
+        if(nombre.compareToIgnoreCase("")==0 || descripcion.compareToIgnoreCase("")==0
+                || ubicacion.compareToIgnoreCase("")==0 || foto==false
+                || hora2==0 || fecha==0){
+            Toast.makeText(this, R.string.nohuecos, Toast.LENGTH_SHORT).show();
+        }
+        else{
 
-        new ProgressTask<Integer>(this){
+            new ProgressTask<Integer>(this){
 
-            @Override
-            protected Integer work() throws IOException, JSONException {
-                String[] strings = PATH.split("/");
-                String fileName = strings[strings.length - 1];
+                @Override
+                protected Integer work() throws IOException, JSONException {
+                    String[] strings = PATH.split("/");
+                    String fileName = strings[strings.length - 1];
 
-                InputStream is = null;
-                File file = new File(PATH);
-                is = new FileInputStream(file);
+                    InputStream is = null;
+                    File file = new File(PATH);
+                    is = new FileInputStream(file);
 
-                return servidorNegocio.addEventos(nombre,descripcion, fecha, hora2, fileName, ubicacion,"ggi2",is);
-            }
-
-            @Override
-            protected void onFinish(Integer result){
-
-                if(result==200){
-                    Toast.makeText(getApplicationContext(), R.string.evento_correcto, Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(context,EventosMenuActivity.class);
-                    startActivity(intent);
-                }else{
-                    Toast.makeText(getApplicationContext(), R.string.evento_no_correcto, Toast.LENGTH_SHORT).show();
+                    return servidorNegocio.addEventos(nombre,descripcion, fecha, hora2, fileName, ubicacion,login,is);
                 }
-            }
 
-            @Override
-            protected void onCancelled() {
-                super.onCancelled();
-                Toast.makeText(getApplicationContext(), R.string.errorregistro, Toast.LENGTH_SHORT).show();
-            }
+                @Override
+                protected void onFinish(Integer result){
 
-        }.execute();
+                    if(result==200){
+                        Toast.makeText(getApplicationContext(), R.string.evento_correcto, Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(context,EventosMenuActivity.class);
+                        startActivity(intent);
+                    }else{
+                        Toast.makeText(getApplicationContext(), R.string.evento_no_correcto, Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                protected void onCancelled() {
+                    super.onCancelled();
+                    Toast.makeText(getApplicationContext(), R.string.errorregistro, Toast.LENGTH_SHORT).show();
+                }
+
+            }.execute();
+
+        }
+
+
+
 
 
     }
@@ -198,6 +211,7 @@ public class CrearEventoActivity extends AppCompatActivity implements View.OnCli
 
             case PICTURE_REQUEST_CODE:
 
+                foto=true;
                 ImageView imageView = (ImageView) findViewById(R.id.foto_perfil2);
                 Picasso.with(this).load("file://"+PATH).resize(1000,1000).into(imageView);
                 imageView.setVisibility(View.VISIBLE);

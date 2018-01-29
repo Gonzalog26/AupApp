@@ -1,6 +1,4 @@
-package eus.ehu.tta.aupapp.negocio;
-
-import android.widget.Toast;
+package eus.ehu.tta.aupapp.modelo;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -10,10 +8,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-
-import eus.ehu.tta.aupapp.modelo.Event;
-import eus.ehu.tta.aupapp.modelo.Test;
-import eus.ehu.tta.aupapp.modelo.User;
 
 /**
  * Created by tta on 10/01/18.
@@ -43,7 +37,7 @@ public class ServidorNegocio implements InterfazNegocio {
         List<Test> tests = new ArrayList<>();
 
         Test test = new Test();
-        test.setEnunciado("Pregunta 1: Barkatu, ____ liburutegira?");
+        test.setEnunciado("Question 1: Barkatu, ____ liburutegira?");
         test.getRespuestas().add("Kaixo");
         test.getRespuestas().add("Nola heldu naiteke");
         test.getRespuestas().add("Zenbat balio du");
@@ -52,7 +46,7 @@ public class ServidorNegocio implements InterfazNegocio {
         tests.add(test);
 
         test = new Test();
-        test.setEnunciado("Pregunta 2: Lotara noa, ____");
+        test.setEnunciado("Question 2: Lotara noa, ____");
         test.getRespuestas().add("Gabon");
         test.getRespuestas().add("Kaixo");
         test.getRespuestas().add("Zelan zaude");
@@ -61,7 +55,7 @@ public class ServidorNegocio implements InterfazNegocio {
         tests.add(test);
 
         test = new Test();
-        test.setEnunciado("Pregunta 3: Itzartu berri naiz ____");
+        test.setEnunciado("Question 3: Itzartu berri naiz ____");
         test.getRespuestas().add("Zelan zaude");
         test.getRespuestas().add("Egun on");
         test.getRespuestas().add("Zenbat balio du?");
@@ -70,7 +64,7 @@ public class ServidorNegocio implements InterfazNegocio {
         tests.add(test);
 
         test = new Test();
-        test.setEnunciado("Pregunta 4: Banoa, _____!");
+        test.setEnunciado("Question 4: Banoa, _____!");
         test.getRespuestas().add("Agur");
         test.getRespuestas().add("Kaixo");
         test.getRespuestas().add("Nola heldu naiteke?");
@@ -79,7 +73,7 @@ public class ServidorNegocio implements InterfazNegocio {
         tests.add(test);
 
         test = new Test();
-        test.setEnunciado("Pregunta 5: Kaixo, ____? Ni ondo.");
+        test.setEnunciado("Question 5: Kaixo, ____? Ni ondo.");
         test.getRespuestas().add("Zelan zaude");
         test.getRespuestas().add("Zenbat balio du?");
         test.getRespuestas().add("Nola heldu naiteke?");
@@ -88,7 +82,7 @@ public class ServidorNegocio implements InterfazNegocio {
         tests.add(test);
 
         test = new Test();
-        test.setEnunciado("Pregunta 6: Pintxo honek, _____!");
+        test.setEnunciado("Question 6: Pintxo honek, _____!");
         test.getRespuestas().add("Zenbat balio du?");
         test.getRespuestas().add("Nola hel naiteke?");
         test.getRespuestas().add("Zer moduz?");

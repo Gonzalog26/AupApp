@@ -5,64 +5,89 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="eus.ehu.tta.aupapp.PerfilUsuarioActivity">
+    tools:context="eus.ehu.tta.aupapp.Presentador.PerfilUsuarioActivity">
 
-    <TextView
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:text="@string/perfil_usuario"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-
-    <ImageView
-        android:id="@+id/foto_perfil"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_gravity="center" />
-
-    <GridLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:columnCount="2">
-
-        <TextView
-            android:layout_marginLeft="@dimen/boton_horizontal_margin"
-            android:layout_marginRight="@dimen/boton_horizontal_margin"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="@string/nombre_apellidos"/>
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/frase_nombre_apellidos"
-            android:layout_marginRight="@dimen/boton_horizontal_margin"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_marginLeft="@dimen/boton_horizontal_margin"
-            android:layout_marginRight="@dimen/boton_horizontal_margin"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="@string/login2"/>
-
-        <TextView
-            android:id="@+id/frase_login"
-            android:layout_marginRight="@dimen/boton_horizontal_margin"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:text="@string/perfil_usuario"/>
 
 
-    </GridLayout>
+            <ImageView
+                android:id="@+id/foto_perfil"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_gravity="center" />
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="2">
+
+                <TextView
+                    android:layout_marginLeft="@dimen/boton_horizontal_margin"
+                    android:layout_marginRight="@dimen/boton_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="@string/nombre_apellidos"/>
+
+                <TextView
+                    android:id="@+id/frase_nombre_apellidos"
+                    android:layout_marginRight="@dimen/boton_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginLeft="@dimen/boton_horizontal_margin"
+                    android:layout_marginRight="@dimen/boton_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="@string/login2"/>
+
+                <TextView
+                    android:id="@+id/frase_login"
+                    android:layout_marginRight="@dimen/boton_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </GridLayout>
+
+            <Button
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/boton_horizontal_margin"
+                android:layout_marginRight="@dimen/boton_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/white"
+                android:text="@string/cerrarSesion"
+                android:onClick="cerrarSesion"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 
 

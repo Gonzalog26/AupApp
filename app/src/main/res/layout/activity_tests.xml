@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="eus.ehu.tta.aupapp.PreguntarDireccionActivity">
+    tools:context="eus.ehu.tta.aupapp.Presentador.PreguntarDireccionActivity">
 
     <Button
         android:layout_marginLeft="100dp"
@@ -52,7 +52,7 @@
         android:layout_marginLeft="@dimen/boton_horizontal_margin"
         android:layout_marginRight="@dimen/boton_horizontal_margin"
         android:id="@+id/boton_corregir"
-        android:visibility="invisible"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/corregir"
@@ -64,13 +64,51 @@
         android:layout_marginLeft="@dimen/boton_horizontal_margin"
         android:layout_marginRight="@dimen/boton_horizontal_margin"
         android:id="@+id/boton_next"
-        android:visibility="invisible"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/siguiente"
         android:onClick="siguiente">
 
     </Button>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:columnCount="3"
+        android:orientation="horizontal"
+        android:gravity="bottom">
+
+        <TextView
+            android:layout_marginLeft="@dimen/boton_horizontal_margin"
+            android:layout_marginRight="@dimen/boton_horizontal_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:text="@string/resultados"/>
+
+        <TextView
+            android:id="@+id/resultados_valor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="@color/colorPrimary"
+            />
+
+        <TextView
+            android:id="@+id/resultados_porcentaje"
+            android:layout_marginLeft="@dimen/boton_horizontal_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="@color/colorPrimary"/>
+
+
+
+    </GridLayout>
 
 
 </LinearLayout>

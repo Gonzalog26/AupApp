@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="eus.ehu.tta.aupapp.ConoceBizkaiaActivity">
+    tools:context="eus.ehu.tta.aupapp.Presentador.ConoceBizkaiaActivity">
 
     <ImageView
         android:src="@drawable/bizkaia"

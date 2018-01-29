@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_gravity="center"
-    tools:context="eus.ehu.tta.aupapp.RegisterActivity">
+    tools:context="eus.ehu.tta.aupapp.Presentador.RegisterActivity">
 
     <ScrollView
         android:layout_width="wrap_content"
@@ -94,7 +94,7 @@
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:layout_gravity="center"
                 android:typeface="sans"
-                android:text="@string/sacar_foto"
+                android:text="@string/sacar_foto_opcional"
                 android:onClick="sacarFoto"/>
 
             <ImageView

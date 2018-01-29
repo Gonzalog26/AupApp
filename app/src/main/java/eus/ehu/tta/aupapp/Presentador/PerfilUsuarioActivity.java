@@ -1,13 +1,7 @@
-package eus.ehu.tta.aupapp;
+package eus.ehu.tta.aupapp.Presentador;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,9 +10,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import org.w3c.dom.Text;
-
-import java.io.File;
+import eus.ehu.tta.aupapp.R;
 
 public class PerfilUsuarioActivity extends AppCompatActivity {
 
@@ -34,16 +26,11 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_usuario);
 
-        Intent intent = getIntent();
-        Bundle extras = intent.getExtras();
-        EXTRA_LOGIN = extras.getString("EXTRA_LOGIN");
-       // EXTRA_NOMBRE = extras.getString("EXTRA_NOMBRE");
-       // EXTRA_PAPELLIDO = extras.getString("EXTRA_PAPELLIDO");
-        EXTRA_SAPELLIDO = extras.getString("EXTRA_SAPELLIDO");
-
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        String EXTRA_NOMBRE = sharedPreferences.getString("Nombre",null);
-        String EXTRA_PAPELLIDO = sharedPreferences.getString("PrimerApellido","default");
+        SharedPreferences sharedPreferences = getSharedPreferences("MisPreferencias",MODE_PRIVATE);
+        String EXTRA_NOMBRE = sharedPreferences.getString("nombre","");
+        String EXTRA_PAPELLIDO = sharedPreferences.getString("primerApellido","");
+        String EXTRA_SAPELLIDO = sharedPreferences.getString("segundoApellido","");
+        String EXTRA_LOGIN = sharedPreferences.getString("login","");
 
 
         char inicial = EXTRA_NOMBRE.charAt(0);
@@ -70,5 +57,23 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
 
 
     }
+
+    public void cerrarSesion(View view){
+
+        SharedPreferences sharedPreferences = getSharedPreferences("MisPreferencias",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("nombre","");
+        editor.putString("primerApellido","");
+        editor.putString("segundoApellido","");
+        editor.putString("login","");
+        editor.putInt("respondidas",0);
+        editor.putInt("correctas",0);
+        editor.commit();
+
+        Intent intent = new Intent(this, Main2Activity.class);
+        startActivity(intent);
+
+    }
+
 
 }

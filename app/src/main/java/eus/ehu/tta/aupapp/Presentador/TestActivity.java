@@ -1,6 +1,8 @@
-package eus.ehu.tta.aupapp;
+package eus.ehu.tta.aupapp.Presentador;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -17,8 +19,9 @@ import android.widget.VideoView;
 
 import java.util.List;
 
+import eus.ehu.tta.aupapp.R;
 import eus.ehu.tta.aupapp.modelo.Test;
-import eus.ehu.tta.aupapp.negocio.ServidorNegocio;
+import eus.ehu.tta.aupapp.modelo.ServidorNegocio;
 
 public class TestActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -34,13 +37,31 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tests);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("MisPreferencias",MODE_PRIVATE);
+        int respondidas = sharedPreferences.getInt("respondidas",0);
+        int correctas = sharedPreferences.getInt("correctas",0);
+
+        TextView textView = (TextView)findViewById(R.id.resultados_valor);
+        textView.setText(correctas+"/"+respondidas);
+
+        if(correctas==0 || respondidas==0){
+            textView= (TextView)findViewById(R.id.resultados_porcentaje);
+            textView.setText("");
+        }
+        else{
+            float porcentaje = (float)correctas/respondidas;
+            textView= (TextView)findViewById(R.id.resultados_porcentaje);
+            textView.setText(porcentaje*100+"%");
+        }
+
+
         Intent intent = getIntent();
         numeroPag = intent.getIntExtra(NUMERO_PAG, 0);
 
 
         if(numeroPag==0 || numeroPag == 4 || numeroPag == 5){
             Button bt = findViewById(R.id.boton_next);
-            bt.setText("Volver al menu de tests");
+            bt.setText(R.string.vovlerMenuTests);
         }
 
         ServidorNegocio generadorTest = new ServidorNegocio();
@@ -78,7 +99,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
             if(numeroPag==3){
                Button bt = findViewById(R.id.boton_next);
-               bt.setText("Volver al menu de tests");
+               bt.setText(R.string.vovlerMenuTests);
             }
 
             findViewById(R.id.video_ayuda).setVisibility(View.VISIBLE);
@@ -114,6 +135,12 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(this, DiaDiaActivity.class);
+        startActivity(intent);
+    }
+
     public void verVideo(View view){
         findViewById(R.id.video_ayuda).setVisibility(View.GONE);
         findViewById(R.id.video).setVisibility(View.VISIBLE);
@@ -131,7 +158,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
             public boolean dispathcKeyEvent(KeyEvent event){
                 if(event.getKeyCode() == KeyEvent.KEYCODE_BACK)
-                    finish();
+                    ((Activity)getContext()).finish();
                 return super.dispatchKeyEvent(event);
             }
         };
@@ -154,9 +181,40 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         if(seleccionado != respuestasCorrecta){
             radioGroup.getChildAt(seleccionado).setBackgroundColor(Color.RED);
             Toast.makeText(getApplicationContext(),"!Has fallado!",Toast.LENGTH_SHORT).show();
+
+            SharedPreferences sharedPreferences = getSharedPreferences("MisPreferencias",MODE_PRIVATE);
+            int respondidas = sharedPreferences.getInt("respondidas",0)+1;
+            int correctas = sharedPreferences.getInt("correctas",0);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putInt("respondidas",respondidas);
+            editor.commit();
+
+            float porcentaje = (float)correctas/respondidas;
+
+            TextView textView = (TextView)findViewById(R.id.resultados_valor);
+            textView.setText(correctas+"/"+respondidas);
+
+            textView= (TextView)findViewById(R.id.resultados_porcentaje);
+            textView.setText(porcentaje*100+"%");
+
         }
         else{
             Toast.makeText(getApplicationContext(), "¡Correcto!", Toast.LENGTH_SHORT).show();
+            SharedPreferences sharedPreferences = getSharedPreferences("MisPreferencias",MODE_PRIVATE);
+            int respondidas = sharedPreferences.getInt("respondidas",0)+1;
+            int correctas = sharedPreferences.getInt("correctas",0)+1;
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putInt("respondidas",respondidas);
+            editor.putInt("correctas",correctas);
+            editor.commit();
+
+            float porcentaje = (float)correctas/respondidas;
+
+            TextView textView = (TextView)findViewById(R.id.resultados_valor);
+            textView.setText(correctas+"/"+respondidas);
+
+            textView= (TextView)findViewById(R.id.resultados_porcentaje);
+            textView.setText(porcentaje*100+"%");
         }
     }
 

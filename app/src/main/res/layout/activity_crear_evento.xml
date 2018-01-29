@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="eus.ehu.tta.aupapp.CrearEventoActivity">
+    tools:context="eus.ehu.tta.aupapp.Presentador.CrearEventoActivity">
 
     <ScrollView
         android:layout_width="wrap_content"
@@ -41,6 +41,7 @@
                 android:id="@+id/ib_obtener_fecha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
                 android:src="@drawable/ic_event_white_24dp"
                 android:layout_marginRight="8dp"
                 app:layout_constraintRight_toRightOf="parent"
@@ -69,6 +70,7 @@
                 android:id="@+id/ib_obtener_hora"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
                 android:src="@drawable/ic_access_time_white_24dp"
                 app:layout_constraintRight_toRightOf="parent"
                 android:layout_marginTop="32dp"
@@ -83,7 +85,7 @@
                 android:id="@+id/et_mostrar_hora_picker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="3"
+                android:ems="5"
                 android:inputType="time"
                 android:hint="@string/formato_hora"
                 android:layout_marginTop="32dp"

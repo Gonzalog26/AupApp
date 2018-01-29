@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_marginTop="@dimen/activity_vertical_margin"
-    tools:context="eus.ehu.tta.aupapp.Main2Activity">
+    tools:context="eus.ehu.tta.aupapp.Presentador.Main2Activity">
 
     <ImageView
         android:layout_marginBottom="@dimen/activity_vertical_margin"
@@ -14,6 +14,19 @@
         android:layout_height="150dp"
         android:layout_gravity="center"
         android:src="@drawable/icono"/>
+
+    <Button
+        android:id="@+id/boton_sesion"
+        android:layout_marginLeft="@dimen/boton_horizontal_margin"
+        android:layout_marginRight="@dimen/boton_horizontal_margin"
+        android:layout_marginBottom="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        android:text="@string/mantenerSesion"
+        android:onClick="mantenerSesion"/>
 
     <Button
         android:layout_marginRight="@dimen/boton_horizontal_margin"
@@ -34,5 +47,7 @@
         android:textColor="@color/white"
         android:text="@string/inicioSesion"
         android:onClick="iniciarSesion"/>
+
+
 
 </LinearLayout>

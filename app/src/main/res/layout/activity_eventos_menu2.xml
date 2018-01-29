@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="eus.ehu.tta.aupapp.EventosMenuActivity">
+    tools:context="eus.ehu.tta.aupapp.Presentador.EventosMenuActivity">
 
     <ImageView
         android:src="@drawable/event"
@@ -35,17 +35,5 @@
         android:textColor="@color/white"
         android:text="@string/verEventos"
         android:onClick="verEventos"/>
-
-    <Button
-        android:backgroundTint="@color/colorPrimary"
-        android:textColor="@color/white"
-        android:drawableTint="@color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_gravity="bottom"
-        android:typeface="sans"
-        android:text="@string/vovlermenu"
-        android:onClick="atras"/>
 
 </LinearLayout>

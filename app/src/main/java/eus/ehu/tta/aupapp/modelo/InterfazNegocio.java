@@ -1,4 +1,4 @@
-package eus.ehu.tta.aupapp.negocio;
+package eus.ehu.tta.aupapp.modelo;
 
 import org.json.JSONException;
 

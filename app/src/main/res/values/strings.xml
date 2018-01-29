@@ -7,7 +7,11 @@
     <string name="frances">Frances</string>
     <string name="Registro">Registrarse</string>
     <string name="inicioSesion">Iniciar Sesión</string>
+    <string name="mantenerSesion">Continuar con la sesión existente</string>
+    <string name="cerrarSesion">Cerrar Sesion</string>
 
+    <string name="nohuecos">Todos los campos deben estar rellenados</string>
+    <string name="letrasminimo">La contraseña debe de tener al menos 8 caracteres</string>
     <!-- Strings para el registro -->
     <string name="nombre">Nombre</string>
     <string name="introducir_nombre">Introduzca su nombre</string>
@@ -18,7 +22,7 @@
     <string name="password">Contraseña</string>
     <string name="introducir_password">Introduzca su contraseña</string>
     <string name="sign_up">Registrarse</string>
-    <string name="sacar_foto_opcional">Sacar foto (Opcional)</string>
+    <string name="sacar_foto_opcional">Sacar foto</string>
     <string name="nocamara">El dispositivo movil no dispone de camara</string>
     <string name="noapp">EL dispositivo no dispone de ninguna aplicación para sacar foto</string>
     <string name="errorregistro">Ha ocurrido un error en el registro</string>
@@ -68,6 +72,7 @@
     <string name="introducir_fecha_inicial">Introduzca la fecha inicial de los eventos a ver</string>
     <string name="introducir_fecha_final">Introduzca la fecha final de los eventos a ver</string>
     <string name="errorvereventos">Error al ver los eventos</string>
+    <string name="nohayeventos">No hay ningun evento entre esas fechas</string>
 
     <!-- Strings para conoce bizkaia -->
     <string name="lugares_bizkaia">Lugares</string>
@@ -120,20 +125,20 @@
     <string name="respuesta63">Zer moduz?</string>
 
     <string name="conectando">Conectando...</string>
-    <string name="vovlermenu">Volver al menu</string>
+    <string name="vovlerMenuTests">Volver al menu de los tests</string>
 
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
+    <string name="resultados">Resultados: </string>
 
-    <string name="preference_file_key">FicheroPreferencias</string>
     <string name="ver_ubicacion">Ver ubicacion</string>
 
     <string name="formato_fecha">dd/mm/yyyy</string>
     <string name="formato_hora">hh:mm</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="hora">Hora: </string>
+    <string name="fecha">Fecha: </string>
+    <string name="descripcion">Descripcion: </string>
+
+    <string name="volverMenu">Volver al menu</string>
+
 
 </resources>

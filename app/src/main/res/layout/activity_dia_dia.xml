@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="eus.ehu.tta.aupapp.DiaDiaActivity">
+    tools:context="eus.ehu.tta.aupapp.Presentador.DiaDiaActivity">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -54,5 +54,15 @@
         android:textColor="@color/white"
         android:text="@string/Precios"
         android:onClick="irPrecio"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:text="@string/volverMenu"
+        android:onClick="volverAlMenu"/>
 
 </LinearLayout>

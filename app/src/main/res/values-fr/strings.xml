@@ -1,39 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">AupApp</string>
-
     <!-- Idiomas -->
     <string name="castellano">Castellano</string>
     <string name="ingles">Ingles</string>
     <string name="frances">Frances</string>
-    <string name="Registro">Inscription</string>
-    <string name="inicioSesion">Login</string>
+    <string name="Registro">S\'inscrire</string>
+    <string name="inicioSesion"> Connexion</string>
+    <string name="mantenerSesion"> Continuer avec la session existante </string>
+    <string name="cerrarSesion">Fermer la session</string>
 
+    <string name="nohuecos">Tous les champs doivent être renseignés </string>
+    <string name="letrasminimo"> Le mot de passe doit comporter au moins 8 caractères </string>
     <!-- Strings para el registro -->
-    <string name="nombre">Nombre</string>
-    <string name="introducir_nombre">Introduzca su nombre</string>
-    <string name="primer_apellido">Primer apellido</string>
-    <string name="introducir_primer_apellido">Introduzca su primer apellido</string>
-    <string name="segundo_apellido">Segundo apellido</string>
-    <string name="introducir_segundo_apellido">Introduzca su segundo apellido</string>
-    <string name="password">Contraseña</string>
-    <string name="introducir_password">Introduzca su contraseña</string>
-    <string name="sign_up">Registrarse</string>
-    <string name="sacar_foto">Sacar foto</string>
+    <string name="nombre">Nom</string>
+    <string name="introducir_nombre"> Entrez votre nom</string>
+    <string name="primer_apellido">Prénom</string>
+    <string name="introducir_primer_apellido">Entrez votre prénomo</string>
+    <string name="segundo_apellido">Deuxième nom de famille</string>
+    <string name="introducir_segundo_apellido">Entrez votre deuxième nom de famille</string>
+    <string name="password">Mot de passe</string>
+    <string name="introducir_password">Entrez votre mot de passe</string>
+    <string name="sign_up">Enregistrer</string>
+    <string name="sacar_foto_opcional">Prendre une photo</string>
+    <string name="nocamara"> L\'appareil mobile n\'a pas de caméra</string>
+    <string name="noapp">Le périphérique n\'a aucune application pour prendre l'image </string>
+    <string name="errorregistro">Une erreur est survenue dans le registre</string>
 
     <!-- Strings para el logeo -->
-    <string name="login">Login</string>
-    <string name="introducir_login">Introduzca su login</string>
-    <string name="sign_in">Logearse</string>
+    <string name="login">Connexion</string>
+    <string name="introducir_login"> Entrez votre identifiant </string>
+    <string name="sign_in"> Connexion</string>
+    <string name="nocoincidencias">Le nom d\'utilisateur ou le mot de passe ne sont pas corrects </string>
+    <string name="errorlogeo">Une erreur est survenue dans la connexion</string>
 
 
     <!-- menu -->
 
-    <string name="perfil_usuario">Perfil de usuario</string>
-    <string name="crear_ver_eventos">Crear o ver eventos</string>
-    <string name="dia_a_dia">Dia a dia</string>
-    <string name="conoce_bizkaia">Conoce Bizkaia</string>
+    <string name="perfil_usuario">Profil utilisateur</string>
+    <string name="crear_ver_eventos">Créer ou afficher des événements</string>
+    <string name="dia_a_dia">Jour après jour</string>
+    <string name="conoce_bizkaia">Connaître la Biscaye</string>
+
+    <!-- perfil de usuario-->
+
+    <string name="nombre_apellidos">Prénom et nom: </string>
+    <string name="login2"> Connexion: </string>
+
+    <!--Relacionado con eventos-->
+
+    <string name="crearEvento">Créer un événement</string>
+    <string name="verEventos">Voir les événements</string>
+
+    <!-- Strings para crear evento -->
+    <string name="introducir_nombre_evento">Entrer le nom de l\'événement</string>
+    <string name="fecha_evento">Date: </string>
+    <string name="introducir_fecha_evento">Entrer le jour de l\'événement</string>
+    <string name="hora_evento">Heure: </string>
+    <string name="introducir_hora_evento">Entrez l\'heure de l\'événement</string>
+    <string name="descripcion_evento"> Description: </string>
+    <string name="introducir_descripcion_evento">Entrez la description de l\'événement </string>
+    <string name="ubicacion_evento"> Emplacement:</string>
+    <string name="introducir_ubicacion_evento">Entrez l\'emplacement de l\'événement</string>
+    <string name="sacar_foto">Prendre une photo</string>
+    <string name="evento_correcto"> Evénement créé correctement</string>
+    <string name="evento_no_correcto">L\'événement n\'a pas pu être créé</string>
+
+    <!-- Strings para ver evento -->
+    <string name="fecha_inicial">Date de début: </string>
+    <string name="fecha_final"> Date de fin: </string>
+    <string name="introducir_fecha_inicial">Entrez la date de début des événements pour voir</string>
+    <string name="introducir_fecha_final"> Entrez la date de fin des événements pour voir</string>
+    <string name="errorvereventos">Erreur lors de la visualisation des événements</string>
+    <string name = "nohayeventos"> Il n\'y a pas d\'événement entre ces dates </string>
+
+    <!-- Strings para conoce bizkaia -->
+    <string name="lugares_bizkaia">Lieux </string>
+    <string name="cultura_bizkaia">Culture</string>
+    <string name="museos"> Musées</string>
+    <string name="fiesta_bares">Partie et barres</string>
+    <string name="playas_montañas">Plages et montagnes</string>
+    <string name="centros_comerciales">Centres commerciaux</string>
+    <string name="bailes"> Danses</string>
+    <string name="comida">Nourriture</string>
+
+    <!-- Strings para los tests -->
+    <string name="preguntarDireccion"> Demander une adresse</string>
+    <string name="saludosdespedidas"> Salutations et adieux </string>
+    <string name="iniciarConversacion">Démarrer la conversation</string>
+    <string name="Precios">Prix</string>
+
+    <string name="verVideo"> Regarder la vidéo</string>
+    <string name="corregir">Correctif</string>
+    <string name="siguiente">Suivant</string>
+
+    <string name="enunciado1">Question 1: Barkatu, ____ liburutegira?</string>
+    <string name="respuesta11">Kaixo</string>
+    <string name="respuesta12">Nola heldu naiteke</string>
+    <string name="respuesta13">Zenbat balio du...?</string>
+
+    <string name="enunciado2">Question 2: Lotara noa, ____</string>
+    <string name="respuesta21">Gabon</string>
+    <string name="respuesta22">Kaixo</string>
+    <string name="respuesta23">Zelan zaude?</string>
+
+    <string name="enunciado3">Question 3: Itzartu berri naiz ____</string>
+    <string name="respuesta31">Zelan zaude</string>
+    <string name="respuesta32">Egun on</string>
+    <string name="respuesta33">Zenbat balio du...?</string>
+
+    <string name="enunciado4">Question 4: Banoa, ___!</string>
+    <string name="respuesta41">Agur</string>
+    <string name="respuesta42">Kaixo</string>
+    <string name="respuesta43">Nola heldu naiteke...?</string>
+
+    <string name="enunciado5">Question 5: Kaixo, ____? Ni ondo.</string>
+    <string name="respuesta51">Zenbat balio du...?</string>
+    <string name="respuesta52">Zelan zaude?</string>
+    <string name="respuesta53">Nola heldu naiteke?</string>
+
+    <string name="enunciado6">Question 6: Pintxo honek,____?</string>
+    <string name="respuesta61">Zenbat balio du...?</string>
+    <string name="respuesta62">Nola hel naiteke...?</string>
+    <string name="respuesta63">Zer moduz?</string>
+
+    <string name="conectando">Conmexion...</string>
+    <string name="vovlermenu">Retour au menu</string>
+
+    <string name="resultados">Resultats: </string>
+
+    <string name="ver_ubicacion">Voir l\'emplacement</string>
+
+    <string name="formato_fecha">jj/mm/aa</string>
+    <string name="formato_hora">hh:mm</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="hora">Heure: </string>
+    <string name="fecha">Date: </string>
+    <string name="descripcion">Description: </string>
 
 
 </resources>

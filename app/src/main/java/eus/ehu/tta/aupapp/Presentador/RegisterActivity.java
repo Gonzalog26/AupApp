@@ -1,18 +1,11 @@
-package eus.ehu.tta.aupapp;
+package eus.ehu.tta.aupapp.Presentador;
 
 import android.Manifest;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Environment;
-import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -30,9 +23,9 @@ import org.json.JSONException;
 import java.io.File;
 import java.io.IOException;
 
-import eus.ehu.tta.aupapp.modelo.User;
-import eus.ehu.tta.aupapp.negocio.ProgressTask;
-import eus.ehu.tta.aupapp.negocio.ServidorNegocio;
+import eus.ehu.tta.aupapp.R;
+import eus.ehu.tta.aupapp.modelo.ProgressTask;
+import eus.ehu.tta.aupapp.modelo.ServidorNegocio;
 
 
 public class RegisterActivity extends AppCompatActivity {
@@ -41,6 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
     ServidorNegocio servidorNegocio = new ServidorNegocio();
 
     private final int PICTURE_REQUEST_CODE = 1;
+    boolean foto;
 
     private final int WRITE_PERMISSION_CODE = 2;
 
@@ -56,6 +50,8 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        foto=false;
     }
 
     public void registro(View view){
@@ -65,51 +61,57 @@ public class RegisterActivity extends AppCompatActivity {
         final String sapellido = ((EditText)findViewById(R.id.sapellido)).getText().toString();
         final String password = ((EditText)findViewById(R.id.password)).getText().toString();
 
-
-        new ProgressTask<String>(this){
-
-            @Override
-            protected String work() throws IOException, JSONException {
-                return servidorNegocio.registro(nombre, papellido, sapellido,password);
+        if(nombre.length()==0 || papellido.length()==0 || sapellido.length()==0 || password.length()==0 || foto==false){
+            Toast.makeText(this, R.string.nohuecos, Toast.LENGTH_SHORT).show();
+        }
+        else{
+            if(password.length()<8){
+                Toast.makeText(this, R.string.letrasminimo, Toast.LENGTH_SHORT).show();
             }
+            else{
 
-            @Override
-            protected void onFinish(String result){
+                new ProgressTask<String>(this){
+
+                    @Override
+                    protected String work() throws IOException, JSONException {
+                        return servidorNegocio.registro(nombre, papellido, sapellido,password);
+                    }
+
+                    @Override
+                    protected void onFinish(String result){
 
 
-                File file = new File(pictureUri.getPath());
-                Final_Path = Final_Path+result+".jpg";
-                File file2 = new File(Final_Path);
+                        File file = new File(pictureUri.getPath());
+                        Final_Path = Final_Path+result+".jpg";
+                        File file2 = new File(Final_Path);
 
 
-                file.renameTo(file2);
+                        file.renameTo(file2);
 
-                Intent intent = new Intent(context, MenuActivity.class);
-                Bundle extras = new Bundle();
-                extras.putString("EXTRA_LOGIN",result);
-                //extras.putString("EXTRA_NOMBRE",nombre);
-                //extras.putString("EXTRA_PAPELLIDO",papellido);
-                extras.putString("EXTRA_SAPELLIDO",sapellido);
+                        Intent intent = new Intent(context, MenuActivity.class);
+                        Bundle extras = new Bundle();
+                        extras.putString("EXTRA_LOGIN",result);
+                        extras.putString("EXTRA_NOMBRE",nombre);
+                        extras.putString("EXTRA_PAPELLIDO",papellido);
+                        extras.putString("EXTRA_SAPELLIDO",sapellido);
+                        extras.putString("Actividad","Registro");
+                        intent.putExtras(extras);
+                        startActivity(intent);
+                    }
 
-                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("Nombre",nombre);
-                editor.putString("PrimerApellido",papellido);
-                editor.commit();
+                    @Override
+                    protected void onCancelled() {
+                        super.onCancelled();
+                        Toast.makeText(getApplicationContext(), R.string.errorregistro, Toast.LENGTH_SHORT).show();
+                    }
 
-                Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+                }.execute();
 
-                intent.putExtras(extras);
-                startActivity(intent);
+
+
             }
+        }
 
-            @Override
-            protected void onCancelled() {
-                super.onCancelled();
-                Toast.makeText(getApplicationContext(), R.string.errorregistro, Toast.LENGTH_SHORT).show();
-            }
-
-        }.execute();
 
 
     }
@@ -165,7 +167,7 @@ public class RegisterActivity extends AppCompatActivity {
         switch (requestCode) {
 
             case PICTURE_REQUEST_CODE:
-
+                foto=true;
                 ImageView imageView = (ImageView) findViewById(R.id.foto_perfil_registro);
                 Picasso.with(this).load("file://"+Provisional_Path).resize(1000,1000).into(imageView);
                 imageView.setVisibility(View.VISIBLE);

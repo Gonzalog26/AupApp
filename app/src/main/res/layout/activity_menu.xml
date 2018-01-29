@@ -8,7 +8,7 @@
     android:layout_marginLeft="@dimen/boton_horizontal_margin"
     android:layout_marginRight="@dimen/boton_horizontal_margin"
     android:layout_marginTop="@dimen/activity_vertical_margin"
-    tools:context="eus.ehu.tta.aupapp.MenuActivity">
+    tools:context="eus.ehu.tta.aupapp.Presentador.MenuActivity">
 
     <ImageView
         android:layout_width="320dp"

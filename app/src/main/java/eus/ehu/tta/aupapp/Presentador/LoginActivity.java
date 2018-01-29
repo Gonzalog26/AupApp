@@ -1,4 +1,4 @@
-package eus.ehu.tta.aupapp;
+package eus.ehu.tta.aupapp.Presentador;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -11,9 +11,10 @@ import org.json.JSONException;
 
 import java.io.IOException;
 
+import eus.ehu.tta.aupapp.R;
 import eus.ehu.tta.aupapp.modelo.User;
-import eus.ehu.tta.aupapp.negocio.ProgressTask;
-import eus.ehu.tta.aupapp.negocio.ServidorNegocio;
+import eus.ehu.tta.aupapp.modelo.ProgressTask;
+import eus.ehu.tta.aupapp.modelo.ServidorNegocio;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -49,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
                     extras.putString("EXTRA_NOMBRE",result.getNombre());
                     extras.putString("EXTRA_PAPELLIDO",result.getPapellido());
                     extras.putString("EXTRA_SAPELLIDO",result.getSapellido());
-                    Toast.makeText(getApplicationContext(), "Bienvenido "+result.getNombre()+"!", Toast.LENGTH_SHORT).show();
+                    extras.putString("Actividad","login");
                     intent.putExtras(extras);
                     startActivity(intent);
                 }

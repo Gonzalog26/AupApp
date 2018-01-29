@@ -1,4 +1,4 @@
-package eus.ehu.tta.aupapp;
+package eus.ehu.tta.aupapp.Presentador;
 
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import java.util.Locale;
+
+import eus.ehu.tta.aupapp.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,10 +1,12 @@
-package eus.ehu.tta.aupapp;
+package eus.ehu.tta.aupapp.Presentador;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import eus.ehu.tta.aupapp.R;
 
 public class CulturaBizkaiaActivity extends AppCompatActivity {
 

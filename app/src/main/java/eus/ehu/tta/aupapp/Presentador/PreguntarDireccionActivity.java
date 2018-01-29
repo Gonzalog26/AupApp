@@ -1,4 +1,4 @@
-package eus.ehu.tta.aupapp;
+package eus.ehu.tta.aupapp.Presentador;
 
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -11,8 +11,9 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import eus.ehu.tta.aupapp.R;
 import eus.ehu.tta.aupapp.modelo.Test;
-import eus.ehu.tta.aupapp.negocio.ServidorNegocio;
+import eus.ehu.tta.aupapp.modelo.ServidorNegocio;
 
 public class PreguntarDireccionActivity extends AppCompatActivity implements View.OnClickListener{
 
